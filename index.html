@@ -1,0 +1,1731 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Watch Dragon Ball Kai — all 167 episodes, with the original score or the Faulconer Edition. Pick up right where you left off and keep watching on your phone or your TV." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dragon Ball Kai" />
+    <meta property="og:description" content="All 167 episodes — original score or Faulconer Edition. Pick up right where you left off and keep watching on your phone or your TV." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dragon Ball Kai" />
+    <meta name="twitter:description" content="All 167 episodes — original score or Faulconer Edition. Pick up right where you left off and keep watching on your phone or your TV." />
+    <link rel="preconnect" href="https://dn801209.us.archive.org" crossorigin />
+    <link rel="preconnect" href="https://ia801006.us.archive.org" crossorigin />
+    <link rel="dns-prefetch" href="https://archive.org" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <link rel="icon" href="data:," />
+    <title>Dragon Ball Kai</title>
+    <style>
+      /* ============================================================
+         Late-Jobs era, 2011: iOS 6 / Lion materials, Jobs restraint.
+         Dark linen, brushed metal, one glossy gel button, embossed
+         Helvetica Neue. Nothing on screen that isn't the episode.
+         ============================================================ */
+      :root {
+        color-scheme: dark;
+        /* One typeface, defined once — Jobs' final era: Helvetica Neue
+           everywhere, hierarchy from weight and size alone. No webfont,
+           no serif, no mono, no second family anywhere in the app. */
+        --font: "Helvetica Neue", Helvetica, sans-serif;
+        /* The whole type ramp: six sizes, four weights (300/400/500/600). */
+        --fs-micro: 12px;
+        --fs-small: 14px;
+        --fs-control: 15px;
+        --fs-body: 17px;
+        --fs-title: 20px;
+        --fs-display: 36px;
+        --fs-display: clamp(30px, 6.5vw, 42px);
+        --text: #f2f2f4;
+        --quiet: #b6b6bd;
+        --faint: #8f8f98;
+        --accent: #6db3f2;
+        --backdrop: rgba(0, 0, 0, 0.52);
+        --sheet-shadow: 0 -18px 55px rgba(0, 0, 0, 0.65);
+
+        /* Woven linen: fine cross-hatch threads over a base colour. */
+        --linen:
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.028) 0, rgba(255, 255, 255, 0.028) 1px, transparent 1px, transparent 3px),
+          repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 1px, transparent 3px),
+          repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0, rgba(0, 0, 0, 0.12) 1px, transparent 1px, transparent 3px),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 3px);
+
+        /* Brushed metal: vertical grain over a steel gradient. */
+        --metal:
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0, rgba(255, 255, 255, 0.035) 1px, transparent 1px, transparent 3px),
+          repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 2px),
+          linear-gradient(180deg, #a4a4ab 0%, #85858c 48%, #6f6f76 52%, #606067 100%);
+
+        /* Glossy gel: a hard highlight across the top half. */
+        --gel:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0.15) 48%, rgba(255, 255, 255, 0) 52%, rgba(0, 0, 0, 0.07) 100%),
+          linear-gradient(180deg, #70b2f5 0%, #2f7de0 52%, #1a66c9 100%);
+        --gel-dark:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.06) 48%, rgba(0, 0, 0, 0.10) 52%, rgba(0, 0, 0, 0.22) 100%),
+          linear-gradient(180deg, #56565d 0%, #333338 100%);
+      }
+
+      * { box-sizing: border-box; }
+      /* Every control inherits the one typeface from this single rule —
+         no per-component font declarations anywhere else. */
+      button, input { font-family: inherit; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background-color: #252529;
+        background-image:
+          radial-gradient(120% 70% at 50% -10%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 60%),
+          var(--linen);
+        color: var(--text);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      /* The linen darkens at the edges, like the real panel. */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        transform: translateZ(0);
+        pointer-events: none;
+        box-shadow: inset 0 0 170px rgba(0, 0, 0, 0.5);
+      }
+
+      main {
+        width: 100%;
+        max-width: 880px;
+        padding: 28px 20px 40px;
+        padding: clamp(16px, 4vh, 44px) 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+      }
+
+      /* ---------- The episode, in a device bezel ---------- */
+      .stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: linear-gradient(180deg, #5b5b62, #2a2a2e 10%, #131315 90%, #3b3b41);
+        border: 1px solid #050506;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.07),
+          0 22px 55px rgba(0, 0, 0, 0.6),
+          0 3px 10px rgba(0, 0, 0, 0.55);
+        animation: stageIn 0.45s ease;
+      }
+      @keyframes stageIn { from { opacity: 0; } to { opacity: 1; } }
+      /* An episode change is a crossfade, never a hard cut. */
+      .stage.switching video { opacity: 0; }
+      /* A breath of glass over the screen. */
+      .stage::after {
+        content: "";
+        position: absolute;
+        top: 11px; right: 11px; bottom: 11px; left: 11px;
+        border-radius: 5px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 38%);
+        pointer-events: none;
+      }
+      .stage video {
+        position: absolute;
+        top: 11px; right: 11px; bottom: 11px; left: 11px;
+        width: calc(100% - 22px);
+        height: calc(100% - 22px);
+        border-radius: 5px;
+        display: block;
+        background: #000;
+        transition: opacity 0.45s ease;
+      }
+
+      /* Big quiet play affordance — only if autoplay is refused */
+      .big-play {
+        position: absolute;
+        top: 11px; right: 11px; bottom: 11px; left: 11px;
+        border-radius: 5px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.25);
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+      }
+      .big-play.show { display: flex; }
+      .big-play span {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.97), rgba(212, 216, 224, 0.92) 55%, rgba(158, 164, 175, 0.94));
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow:
+          inset 0 1px 0 #ffffff,
+          inset 0 -10px 16px rgba(0, 0, 0, 0.14),
+          0 5px 16px rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.15s ease;
+      }
+      .big-play:hover span { transform: scale(1.05); }
+      .big-play svg { width: 34px; height: 34px; margin-left: 4px; fill: #1d1d1f; }
+
+      .spinner {
+        position: absolute;
+        top: 11px; right: 11px; bottom: 11px; left: 11px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .spinner.show { display: flex; }
+      .spinner i, .stage-loading i {
+        will-change: transform;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.25);
+        border-top-color: rgba(255, 255, 255, 0.9);
+        animation: spin 0.9s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .spinner i, .stage-loading i { animation-duration: 2.4s; }
+        .sheet { transition: none; }
+        .stage { animation: none; }
+        .stage video { transition: none; }
+      }
+
+      /* Stream-failure fallback — shown only when a stream truly fails */
+      .stream-error {
+        position: absolute;
+        top: 11px; right: 11px; bottom: 11px; left: 11px;
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        color: #f5f5f7;
+        text-align: center;
+        padding: 24px;
+      }
+      .stream-error.show { display: flex; }
+      .stream-error p { margin: 0; font-size: var(--fs-body); }
+      .stream-error button {
+        margin-top: 10px;
+        color: var(--accent);
+        background: none;
+        border: 0;
+        font-size: var(--fs-body);
+        cursor: pointer;
+        text-decoration: none;
+        padding: 4px 8px;
+      }
+
+      .stage.gone { display: none; }
+      /* Loading lives on the linen: a spinner, no frame, no black box. */
+      .stage-loading {
+        display: none;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        align-items: center;
+        justify-content: center;
+      }
+      .stage-loading.show { display: flex; }
+
+      /* Older Chrome (the A9's Marshmallow-era builds, anything
+         before Chrome 88) has no aspect-ratio: without a height the
+         stage collapses to nothing and the video inside it — sized
+         from the stage — renders zero pixels tall. That is the
+         "video does not play" on old browsers. The padding-top
+         ratio box is the pre-aspect-ratio way to hold 16:9, and it
+         works in every Chrome ever shipped; modern browsers never
+         see this block. The absolutely positioned video and its
+         overlays take their box from the stage's padding box, so
+         they fill the ratio exactly as they do with aspect-ratio. */
+      @supports not (aspect-ratio: 16 / 9) {
+        .stage, .stage-loading { height: 0; padding-top: 56.25%; }
+        .stage-loading { position: relative; }
+        .stage-loading i {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin: -17px 0 0 -17px;
+        }
+      }
+
+      /* ---------- Episode number and title, under the video ---------- */
+      .episode-line {
+        margin-top: 18px;
+        padding: 0 8px;
+        max-width: 640px;
+        text-align: center;
+      }
+      .episode-line .ep-num {
+        display: block;
+        margin-bottom: 5px;
+        font-size: var(--fs-micro);
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .episode-line .ep-title {
+        display: block;
+        font-size: var(--fs-title);
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        line-height: 1.3;
+        color: var(--text);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      /* ---------- The Play button: glossy gel ---------- */
+      /* The Library detail view's Play: the same glossy gel as the
+         score switch's lit segment, pressed state and all. */
+      .play-btn {
+        margin-top: 20px;
+        appearance: none;
+        font-size: var(--fs-body);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        padding: 15px 54px;
+        min-height: 56px;
+        touch-action: manipulation;
+        background: var(--gel);
+        border: 1px solid #0b3d7d;
+        border-radius: 10px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.55),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+          0 1px 4px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+      .play-btn:hover { filter: brightness(1.06); }
+      .play-btn:active {
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.05) 48%, rgba(255, 255, 255, 0.02) 52%, rgba(0, 0, 0, 0.10) 100%),
+          linear-gradient(180deg, #5ea5ef 0%, #256fc9 52%, #155cb4 100%);
+        box-shadow:
+          inset 0 2px 7px rgba(0, 0, 20, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25),
+          0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      .play-btn:focus-visible, .quiet-btn:focus-visible, .sheet-done:focus-visible,
+      .detail-back:focus-visible, .score-seg:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* ---------- The score: one segmented control ---------- */
+      /* iOS 6 segmented control: metal segments in a dark bezel,
+         the chosen one lit with the same blue gel as the button. */
+      .score-switch {
+        display: flex;
+        width: 100%;
+        max-width: 340px;
+        border: 1px solid rgba(0, 0, 0, 0.65);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.18),
+          0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      .score-seg {
+        flex: 1;
+        appearance: none;
+        font-size: var(--fs-control);
+        font-weight: 500;
+        color: #f0f0f2;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+        background: var(--gel-dark);
+        border: 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.55);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        cursor: pointer;
+        padding: 7px 0;
+      }
+      .score-seg:first-child { border-left: 0; }
+      .score-seg.selected {
+        background: var(--gel);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+      }
+
+      /* Everything else: one tap away, whisper-quiet */
+      .quiet-row {
+        margin-top: 32px;
+        margin-top: clamp(26px, 4.5vh, 40px);
+        display: flex;
+        align-items: center;
+      }
+      /* Flex gap is Chrome 84+; margins space the row everywhere. */
+      .quiet-row > * + * { margin-left: 14px; }
+      .quiet-btn {
+        appearance: none;
+        font-size: var(--fs-control);
+        font-weight: 500;
+        color: #f0f0f2;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+        background: var(--gel-dark);
+        border: 1px solid rgba(0, 0, 0, 0.65);
+        border-radius: 8px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        padding: 10px 20px;
+        min-height: 44px;
+        touch-action: manipulation;
+      }
+      .quiet-btn:active {
+        box-shadow:
+          inset 0 2px 6px rgba(0, 0, 0, 0.5),
+          0 1px 0 rgba(255, 255, 255, 0.07);
+      }
+      /* ---------- Episodes sheet: linen, sliding up like an iPad sheet ---------- */
+      .backdrop {
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background: var(--backdrop);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 20;
+      }
+      .backdrop.open { opacity: 1; pointer-events: auto; }
+
+      .sheet {
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 105%);
+        width: 100%;
+        max-width: 560px;
+        max-height: 78vh;
+        max-height: 78dvh;
+        background-color: #34343a;
+        background-image: var(--linen);
+        border: 1px solid #0b0b0d;
+        border-bottom: 0;
+        border-radius: 12px 12px 0 0;
+        box-shadow: var(--sheet-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+        z-index: 21;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.45s cubic-bezier(0.32, 1.15, 0.35, 1);
+      }
+      .sheet.open { transform: translate(-50%, 0); }
+      /* Brushed-metal toolbar across the top of the sheet. */
+      .sheet-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px 10px 18px;
+        background-color: #707076;
+        background-image: var(--metal);
+        border-bottom: 1px solid #1c1c1f;
+        border-radius: 11px 11px 0 0;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+      }
+      .sheet-head h2 {
+        margin: 0;
+        font-size: var(--fs-title);
+        font-weight: 500;
+        letter-spacing: 0;
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.55);
+      }
+      .sheet-head-actions {
+        display: flex;
+        align-items: center;
+      }
+      .sheet-head-actions .sheet-done { margin-left: 8px; }
+      .search-toggle {
+        appearance: none;
+        background: var(--gel-dark);
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        border-radius: 7px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+      }
+      .search-toggle:active {
+        box-shadow:
+          inset 0 2px 5px rgba(0, 0, 0, 0.5),
+          0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+      .search-toggle svg {
+        width: 17px;
+        height: 17px;
+        fill: #f2f2f4;
+        display: block;
+        filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.45));
+      }
+      .sheet-done {
+        appearance: none;
+        font-size: var(--fs-control);
+        font-weight: 600;
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        background: var(--gel);
+        border: 1px solid #0b3d7d;
+        border-radius: 7px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          0 1px 2px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        padding: 6px 14px;
+      }
+      .sheet-done:active {
+        box-shadow:
+          inset 0 2px 6px rgba(0, 0, 20, 0.45),
+          0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+      /* The official lockup lives here, in the Library header —
+         small, centered, seen while browsing and nowhere else.
+         It never touches the main screen or the video. */
+      .sheet-logo {
+        display: flex;
+        justify-content: center;
+        padding: 16px 20px 4px;
+      }
+      .sheet-logo img {
+        display: block;
+        width: 168px;
+        max-width: 54%;
+        height: auto;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+      }
+      /* Search stays collapsed until it is asked for. */
+      .sheet-search {
+        display: none;
+        padding: 8px 12px;
+        background-image:
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px),
+          linear-gradient(180deg, #5d5d64, #4a4a51);
+        border-bottom: 1px solid #1c1c1f;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      }
+      .sheet-search.open { display: block; }
+      .sheet-search input {
+        width: 100%;
+        appearance: none;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        outline: none;
+        background: linear-gradient(180deg, #e9e9ec, #f7f7f8);
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.32),
+          0 1px 0 rgba(255, 255, 255, 0.25);
+        color: #1d1d1f;
+        font-size: var(--fs-body);
+        padding: 8px 14px;
+        border-radius: 15px;
+      }
+      .sheet-search input::placeholder { color: #7c7c82; }
+
+      /* The score choice lives here now — set once, in the Library,
+         not on the main screen. */
+      .sheet-edition {
+        display: flex;
+        justify-content: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+
+      .sheet-list {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 0 14px;
+        padding: 0 0 calc(14px + env(safe-area-inset-bottom));
+      }
+      /* Section bar, embossed into the linen. */
+      .saga-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 7px 16px 6px;
+        background: linear-gradient(180deg, rgba(148, 148, 158, 0.5), rgba(96, 96, 106, 0.5));
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        font-size: var(--fs-control);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+      }
+      .saga-group:first-child .saga-head { border-top: 0; }
+      .saga-head .range {
+        font-size: var(--fs-small);
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.72);
+        font-variant-numeric: tabular-nums;
+      }
+      .lib-empty {
+        display: none;
+        padding: 30px 20px 36px;
+        text-align: center;
+        font-size: var(--fs-body);
+        color: var(--quiet);
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+      }
+      .lib-empty.show { display: block; }
+      .ep-row {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        appearance: none;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        text-align: left;
+        padding: 12px 16px;
+        border-radius: 0;
+        cursor: pointer;
+        font-size: var(--fs-body);
+      }
+      .saga-group .ep-row:last-child { border-bottom: 0; box-shadow: none; }
+      .ep-row:hover { background: rgba(255, 255, 255, 0.055); }
+      .ep-row.current {
+        background: linear-gradient(180deg, rgba(111, 177, 245, 0.30), rgba(38, 110, 205, 0.30));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+      .ep-row .num {
+        width: 44px;
+        flex: none;
+        color: var(--faint);
+        font-variant-numeric: tabular-nums;
+        padding-top: 1px;
+      }
+      .ep-row .name { flex: 1; min-width: 0; margin-left: 12px; }
+      .ep-row .ttl { display: block; }
+      .ep-row .mark {
+        flex: none;
+        margin-left: 12px;
+        font-size: var(--fs-small);
+        color: var(--quiet);
+        min-width: 18px;
+        text-align: right;
+        padding-top: 2px;
+      }
+      .ep-row .mark svg { width: 16px; height: 16px; fill: #8fc1f7; display: block; margin-left: auto; }
+      .ep-row .mark .dot {
+        display: inline-block;
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: #8fc1f7;
+      }
+
+      /* ---------- Episode detail: one thing. The title. Big. ---------- */
+      .sheet-detail {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 6px 26px 28px;
+        padding: 6px 26px calc(28px + env(safe-area-inset-bottom));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sheet.detail-open .sheet-detail { display: flex; }
+      .sheet.detail-open .sheet-head,
+      .sheet.detail-open .sheet-logo,
+      .sheet.detail-open .sheet-search,
+      .sheet.detail-open .sheet-edition,
+      .sheet.detail-open .sheet-list { display: none; }
+      .detail-back {
+        align-self: flex-start;
+        appearance: none;
+        font-size: var(--fs-control);
+        font-weight: 600;
+        color: #f0f0f2;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+        background: var(--gel-dark);
+        border: 1px solid rgba(0, 0, 0, 0.65);
+        border-radius: 8px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        padding: 7px 14px 7px 10px;
+        margin-top: 8px;
+      }
+      .detail-back:active {
+        box-shadow:
+          inset 0 2px 6px rgba(0, 0, 0, 0.5),
+          0 1px 0 rgba(255, 255, 255, 0.07);
+      }
+      .detail-title {
+        margin: 30px 0 0;
+        margin: clamp(18px, 5vh, 44px) 0 0;
+        font-size: var(--fs-display);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        max-width: 520px;
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+      .detail-play { margin-top: 28px; margin-top: clamp(22px, 4vh, 34px); }
+      .detail-desc {
+        margin: 18px 0 0;
+        font-size: var(--fs-body);
+        line-height: 1.7;
+        color: #f7f7f9;
+        text-align: left;
+        max-width: 520px;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(0, 0, 0, 0.45);
+        border-radius: 8px;
+        box-shadow:
+          inset 0 1px 4px rgba(0, 0, 0, 0.4),
+          0 1px 0 rgba(255, 255, 255, 0.06);
+        padding: 20px 22px;
+      }
+      @media (max-width: 560px) {
+        .play-btn { width: 100%; max-width: 340px; }
+        .stage { border-radius: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="stage" id="stage">
+        <video id="player" controls playsinline preload="auto"></video>
+
+        <div class="spinner" id="spinner" aria-hidden="true"><i></i></div>
+
+        <button class="big-play" id="bigPlay" aria-label="Play">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+          </span>
+        </button>
+
+        <div class="stream-error" id="streamError">
+          <p id="streamErrorText">This episode didn&rsquo;t play.</p>
+          <button id="retryBtn" type="button">Try Again</button>
+        </div>
+      </div>
+
+      <div class="stage-loading" id="stageLoading" aria-hidden="true"><i></i></div>
+
+      <div class="episode-line">
+        <span class="ep-num" id="episodeNum"></span>
+        <span class="ep-title" id="episodeTitle"></span>
+      </div>
+
+      <div class="quiet-row">
+        <button class="quiet-btn" id="libraryBtn" type="button">Library</button>
+      </div>
+    </main>
+
+    <div class="backdrop" id="backdrop"></div>
+    <section class="sheet" id="sheet" aria-label="Episode library" aria-hidden="true">
+      <div class="sheet-head">
+        <h2>Library</h2>
+        <div class="sheet-head-actions">
+          <button class="search-toggle" id="searchToggle" type="button" aria-label="Search episodes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 0 4.6 13.5l4.7 4.7 1.4-1.4-4.7-4.7A7.5 7.5 0 0 0 10.5 3zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11z"/></svg>
+          </button>
+          <button class="sheet-done" id="sheetDone" type="button">Done</button>
+        </div>
+      </div>
+      <div class="sheet-logo">
+        <img src="data:image/png;base64,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" alt="Dragon Ball Z Kai" width="731" height="306" />
+      </div>
+      <div class="sheet-search" id="sheetSearch">
+        <input id="libSearch" type="search" placeholder="Search episodes or sagas" autocomplete="off" aria-label="Search the library" />
+      </div>
+      <div class="sheet-edition">
+        <div class="score-switch" role="group" aria-label="Score">
+          <button class="score-seg selected" id="scoreOriginal" type="button" aria-pressed="true">Original</button>
+          <button class="score-seg" id="scoreFaulconer" type="button" aria-pressed="false">Faulconer</button>
+        </div>
+      </div>
+      <div class="sheet-list" id="sheetList">
+        <div class="lib-empty" id="libEmpty">No episodes found.</div>
+      </div>
+      <div class="sheet-detail">
+        <button class="detail-back" id="detailBack" type="button">&lsaquo; Library</button>
+        <h3 class="detail-title" id="detailTitle"></h3>
+        <button class="play-btn detail-play" id="detailPlay" type="button">Play</button>
+        <p class="detail-desc" id="detailDesc"></p>
+      </div>
+    </section>
+
+    <!-- Warms up the next episode while you watch. Invisible, always. -->
+    <video id="preloader" preload="auto" muted playsinline style="display:none"></video>
+
+    <script type="application/json" id="epDescs">{"1": "Goku is a legendary warrior and the strongest fighter on the planet, but he's about to encounter a foe from out of this world. What brings this new menace to Earth? And what's up with his tail?", "2": "When Raditz abducts Gohan and announces his plans for Earth, Goku and Piccolo are forced into an uneasy alliance. The two rivals don't trust each other, but neither of them can stand against the Saiyan on their own.", "3": "Goku and Piccolo throw everything they have at Raditz, but the Saiyan's power dwarfs their best attacks. Piccolo has been saving a new technique for Goku — and this desperate battle is where he plans to use it.", "4": "Goku begins the treacherous trek down Snake Way in the Other World, hoping to reach King Kai and train for the Saiyans' arrival. Back on Earth, Gohan begins his own harsh tutelage under Piccolo.", "5": "Piccolo tries to toughen up Gohan with wilderness survival training, but things get hairy when the young Saiyan sees his first full moon. Meanwhile, Yajirobe summons Earth's strongest fighters to Kami's Lookout.", "6": "As the deadly Saiyan invaders approach Earth, Gohan makes slow but steady progress under the watchful eye of Piccolo, and Goku struggles with the gravity of his training under King Kai — starting with the King's bizarre test.", "7": "To prove himself worthy of King Kai's training, Goku must test his mettle against a fleet-footed monkey and a powerful cricket that's big on respect. Meanwhile, in the land of the living, Gohan takes a beating from his monstrous master.", "8": "Goku's training under King Kai is complete, and he's eager to return to Earth — but the trip home down Snake Way will take time he may not have. Earth's fighters must be ready to face the Saiyans without him.", "9": "The Saiyans have arrived, Goku isn't even on the planet, and the overmatched Z Fighters represent Earth's last line of defense. When Vegeta and Nappa unleash the gruesome Saibamen, Yamcha picks a fight that could be his last.", "10": "Krillin's furious attack clears the Saibamen from the field, but the Z Fighters are powerless against Nappa himself. One by one, Earth's defenders are pushed to their limits — and Goku's return is their only hope.", "11": "A three-hour pause in the battle counts down while Goku races toward Earth. When Vegeta senses an awesome source of power approaching, he orders Nappa to dispose of the remaining Z Fighters — starting with Gohan.", "12": "Goku arrives at the battlefield to find Gohan and Krillin in desperate shape, and the warrior fresh from King Kai's training is eager to put the hurt on Nappa. Watching closely, Prince Vegeta decides to size Goku up himself.", "13": "The stage is set for a showdown between Vegeta and Goku. The Saiyan Prince is stronger, faster, and far more ruthless — Goku's only hope is the Kaio-ken, a technique that may very well destroy the body that uses it.", "14": "Vegeta can't handle the fury of Goku's triple Kaio-ken, so the Saiyan warlord reaches for a Saiyan's most fearsome trick — one that needs a full moon he intends to supply himself. Goku's hopes turn to the mighty Spirit Bomb.", "15": "As Goku lies exhausted and vulnerable on the field of battle, Gohan and Krillin return to take aim at the giant Vegeta's one weakness: his tail. If they can take the ape out of the fight, they might escape with their lives.", "16": "Krillin takes charge of the Spirit Bomb energy Goku gathered, Gohan faces the giant Vegeta head-on, and an unlikely ally hidden nearby gets one clear shot. The Saiyan invasion reaches its endgame.", "17": "Vegeta's invasion is over, but there's no time to celebrate: the Z Fighters must find a way to bring back the friends they lost. Krillin has a plan — one that points to a distant planet called Namek.", "18": "Preparations for the journey to Namek hit a snag when the remaining Saiyan spaceship is lost. Mr. Popo may know of another vessel, so he and Bulma travel to the ends of the Earth for a closer look.", "19": "Bulma, Krillin and Gohan arrive on Namek after a month in space — and the Dragon Radar shows some balls already gathered. Vegeta is hunting the same prize, and so is Frieza, the emperor whose name makes whole planets tremble.", "20": "Gohan and Krillin tangle with Frieza's henchmen, but their spaceship is destroyed in the process. Vegeta is headed for a showdown with Cui, and the shrewd Saiyan is keeping his true power level under wraps.", "21": "Goku blasts off in a brand new spaceship specially equipped to help increase his strength on the way to Namek. On the planet, Krillin and Gohan watch in horror as Frieza's men terrorize Namekian villages for their Dragon Balls.", "22": "Gohan and Krillin risk their lives to rescue a young Namekian from the brute Dodoria. Their escape crosses paths with Vegeta, who has his own score to settle — and pressing questions about the destruction of his home planet.", "23": "Vegeta begins his violent search for the Dragon Balls, village by village. Meanwhile, Krillin and his new friend Dende set out to warn the Grand Elder of the horror headed his way.", "24": "King Kai telepathically phones Goku with a warning: stay as far away from Frieza as possible. Back on Namek, Vegeta tests himself against Zarbon, Frieza's elegant right hand — and discovers appearances in Frieza's army can be deceiving.", "25": "The Grand Elder unlocks the full force of Krillin's dormant power, so he can better protect his friends and their Dragon Ball. Elsewhere, a Saiyan-related premonition prompts Frieza to call for reinforcements.", "26": "Vegeta lays it on the line in a daring attempt to steal the Dragon Balls right out from under Frieza's nose. Krillin is riding high on a Namekian power surge, but he's about to wander into a dogfight he can't survive alone.", "27": "Intimidated by Vegeta's superior strength, Krillin reluctantly surrenders his precious Dragon Ball. A glimmer of hope remains after Gohan secures a ball of his own — if he can keep it hidden from Vegeta.", "28": "Vegeta intercepts Krillin and Gohan on their mad dash to the Grand Elder, but larger problems loom on the horizon: desperate times call for a truce, because the Ginyu Force has arrived on Namek.", "29": "Gohan and Krillin fight to survive against Guldo, a member of the Ginyu Force who possesses awesome psychic abilities. With Goku still in space and Vegeta their only ally, things look bleak for Earth's heroes.", "30": "Vegeta ramps his battle power up to impressive levels, but he's still no match for the Ginyu Force's grinning brute, Recoome. Meanwhile, Frieza discovers that simply gathering Namek's Dragon Balls isn't enough to use them.", "31": "At long last, Goku completes his journey from Earth and arrives on planet Namek. His friends are in grave shape, but the Saiyan warrior has a bag full of Senzu beans — and the results of a hundred days of gravity training.", "32": "As Frieza prepares for his ruthless interrogation of the Grand Elder, Goku shows off the benefits of training in gravity one hundred times that of Earth. Will it be enough to help him stand against Captain Ginyu?", "33": "Frieza locates the Grand Elder, but Nail intercepts the tyrant, risking his own life to preserve the Dragon Balls. Elsewhere, Gohan and Krillin rescue a damsel from some dinosaurs, and Goku continues his battle with Captain Ginyu.", "34": "Gohan and Krillin unearth the Dragon Balls, but summoning Namek's dragon is not as simple as Earth's. Later, Captain Ginyu's devious strategy forces Earth's warriors into an unthinkable position: turning their attacks toward Goku himself.", "35": "Goku is severely injured and unable to fight, so the race is on: a Namekian messenger rushes to help Gohan and Krillin summon Porunga, but there's no guarantee he'll arrive before Frieza.", "36": "Gohan and Krillin — with the aid of the young Namekian Dende — rush to make their wishes before Vegeta or Frieza discover their trickery. But Porunga's rules are not Shenron's rules, and every wish must be chosen with care.", "37": "Piccolo arrives on Namek, and an encounter with a fallen Namekian warrior presents him with a fateful choice. Meanwhile, Vegeta prepares to throw down with Frieza, but the Saiyan prince may be badly overmatched.", "38": "When Frieza turns his cruelty on Krillin, Gohan's fury erupts — the boy's hidden power has always surged when someone he loves is hurt. Dende's quiet gift becomes the group's lifeline as the battle spirals.", "39": "Piccolo joins the battle carrying the strength of two Namekian warriors, and the powerful villain is caught off guard. But Frieza has been treating every form as a restraint — and he has more of them.", "40": "Frieza has begun his ultimate transformation, and Vegeta pins his hopes on a ruthless Saiyan trait: growing stronger after recovering from a mortal wound. The plan hinges on convincing Dende to restore his strength.", "41": "Vegeta gives his increased power and speed a test run by launching a violent attack on Frieza, but no matter how furiously he fights, the Saiyan is unable to penetrate his enemy's defenses. Help, at last, is on its way.", "42": "Goku arrives at the battle scene to find Vegeta battered and badly beaten. The proud prince has things Goku needs to hear about Frieza — and about the Saiyans' past — before Goku faces the tyrant himself.", "43": "Goku and Frieza go head to head in a vicious slugfest that threatens to destroy the planet Namek. Krillin and Gohan are amazed by the brutality of the battle, but Piccolo believes both warriors are just warming up.", "44": "The bruises are multiplying as Goku and Frieza continue to pummel each other mercilessly — and Frieza admits he has been holding back far more than anyone guessed. Meanwhile, Bulma's encounter with an unusual frog leads to an out-of-body experience.", "45": "After suffering a savage beating at the hands of Frieza, Goku summons the awesome power of the Kaio-ken times twenty! If his desperate attack succeeds, victory will be his — but if it fails, the Saiyan race could be eliminated.", "46": "When his most powerful attacks fail to faze Frieza, Goku turns to his ultimate weapon: the Spirit Bomb, gathered from the energy of the living world. Piccolo joins the fight to buy Goku the time he needs.", "47": "With the help of his friends, Goku unleashes a gargantuan Spirit Bomb at Frieza. Victory seems assured — but the tyrant is not finished, and what he does next pushes Goku past a limit no Saiyan has crossed in a thousand years.", "48": "While Gohan races to Piccolo's side, Goku presses his astonishing new power against Frieza. The tyrant's response is a desperate counterattack that could obliterate Namek itself.", "49": "Despite the danger of Namek's impending destruction, Goku continues his battle with Frieza, determined to make the tyrant answer for everything he's done. Elsewhere, Gohan races to locate Bulma before it's too late.", "50": "Kami and King Kai concoct a plan involving the Dragon Balls of two worlds, and Goku continues his epic battle with the villainous Frieza — now fighting at his full, terrifying power.", "51": "Planet Namek is coming apart, a friend on Earth has a last-minute wish in mind, and Dende rushes to reach Porunga in time. On the battlefield, Gohan refuses to leave his father's fight unfinished.", "52": "Goku and Frieza continue their epic battle as planet Namek crumbles beneath their feet. Back on Earth, everyone eagerly awaits word of the fight's end — and of Goku's fate.", "53": "As the epic battle between the two warriors reaches its climax, planet Namek teeters on the brink of ultimate destruction, and Goku is faced with a choice about mercy in the middle of it.", "54": "Namek is gone, Frieza's reign of terror has been challenged like never before, and the whereabouts of Goku remain a mystery. How will Earth carry on? And what will become of the Namekian refugees?", "55": "The wreckage of Frieza is rebuilt with the help of the monster's fiendish father, King Cold! Together, they embark on a mission of vengeance against Earth. Will Goku return home in time to save his friends?", "56": "The bone-chilling onslaught of Frieza and King Cold is brought to a halt by a mysterious stranger with a mighty sword — but only time will tell if this new warrior is friend or foe!", "57": "The formidable stranger finally reveals the secret of his origins after a sparring session with Goku. The oddly familiar fighter is a visitor from the future, sent to deliver a grave warning.", "58": "Goku tells the amazing story of how he survived the destruction of Namek and learned a new technique along the way. Then the heroic warriors begin their training for a looming showdown with the Androids, three years from now.", "59": "Goku and his friends eagerly await the arrival of the Androids at the place and time Trunks predicted. But Yamcha's first confrontation with the mechanized monsters suggests Earth's heroes may be up against more than they can handle.", "60": "Goku tries to pulverize the Androids with a devastating display of his Super Saiyan strength, but a mysterious ailment prevents the mighty warrior from unleashing his true power!", "61": "Vegeta's sudden arrival creates an opening for the others to rescue Goku. While Yamcha rushes the fallen hero to safety, Vegeta reveals his new and improved fighting style — including the Big Bang Attack!", "62": "Goku wages a life-and-death battle with a deadly heart condition, Piccolo takes center stage in the fight against Android 20, and Trunks returns from the future with a disturbing revelation.", "63": "While Piccolo and company search for Dr. Gero's secret laboratory, Vegeta sets out to hunt down Android 20 himself. Meanwhile, Trunks tries everything in his power to save his stubborn father from his own pride.", "64": "The Z Fighters race to reach Dr. Gero's laboratory before he can activate Androids 17 and 18 — the very machines Trunks warned would bring the future to ruin.", "65": "Android 18 takes the fight to Vegeta, and the Saiyan prince's pride meets a power that simply does not tire. One by one, the Z Fighters face the unstoppable Androids — while a bedridden Goku remains their comrades' only hope.", "66": "Faced with an unbeatable enemy, Vegeta flies away in a solitary rage, and Piccolo seeks out Kami on a quest to increase his power by whatever means necessary.", "67": "While Kami considers Piccolo's request, Trunks and the others investigate a mystery Bulma has uncovered: a second time machine, abandoned and overgrown. Elsewhere, Vegeta vows to become strong enough to defeat the Android invaders.", "68": "During their investigation of the second time machine, Gohan and company stumble upon the shell of what appears to be a monstrous creature. And a horrific vision forces Kami to confront a decision he has avoided for years.", "69": "Piccolo finds himself face-to-face with the most terrifying monster the world has ever seen. Who is this new threat — and why does he have Goku's power?", "70": "Cell reveals the mysteries of his hideous origins to Piccolo, confident the Super Namekian is finished. Little does the monster know, Piccolo cannot be conquered so easily — and an escape plan is already in motion.", "71": "Cell continues his terrifying hunt across the cities, Krillin and Trunks deal with what remains of Dr. Gero's laboratory, and Goku awakens from his extended slumber ready to fight!", "72": "Goku leads his Saiyan brethren to a secret room designed for highly advanced training — the Room of Spirit and Time. Meanwhile, Piccolo puts his enhanced powers to the test against an Android adversary.", "73": "Piccolo and Android 17 trade blows in a battle of unprecedented brutality! Cell — sensing their presence — races to the scene of the skirmish in pursuit of his terrifying perfect form.", "74": "Cell's arrival forces Piccolo into a desperate, final stand to keep Android 17 out of the monster's reach. While he fights, Goku and Gohan wait for Vegeta to emerge from the Room of Spirit and Time.", "75": "Cell turns his attention to his true prey: Androids 17 and 18, whom he must absorb to achieve his perfect form. But the silent warrior Android 16 has decided to stand in his way.", "76": "Desperate to help Android 18 escape, Tien places his own life at risk in an unwinnable battle with the monster Cell, pouring everything into one technique to hold the creature back.", "77": "Vegeta puts his new powers to the test in a shocking slugfest with Cell. Back in the Room of Spirit and Time, Goku attempts to teach Gohan the secret to a Super Saiyan transformation.", "78": "Vegeta is fighting Cell — can he finish the monster before it reaches Android 18? And with the emergency shutdown controller in hand, can Krillin bring himself to use it on her?", "79": "As Cell closes in on Android 18, Vegeta's pride becomes the monster's greatest weapon. Krillin attempts to get Androids 16 and 18 to safety before the situation takes a turn for the worst.", "80": "The tables have turned: Cell, in his perfect form, finally goes into action. Krillin and Vegeta test themselves against him as Trunks prepares to reveal his true power — and Goku and Gohan continue training in the Room of Spirit and Time.", "81": "Vegeta unleashes an awesome all-or-nothing attack, but Perfect Cell's terror grows and grows. With the Saiyan prince pushed to his limit, the way clears for Trunks to enter the fight.", "82": "Goku and Gohan continue their Super Saiyan training, and Trunks finds out the hard way that boosting his power to the next level may not stop Cell. The situation looks bleak — until the monster throws down a challenge instead.", "83": "Cell hijacks the airwaves to announce a tournament: the Cell Games, where Earth's fate will be decided. Trunks informs the Z Fighters of the plan, and Android 16 is taken to Capsule Corporation to be repaired.", "84": "Goku and Gohan complete their training in the Room of Spirit and Time and fly down from the Lookout to greet their friends — relaxed, fed, and quietly confident about the Cell Games ahead.", "85": "Piccolo and Vegeta take their turns training in the Room of Spirit and Time, while Goku and Gohan enjoy a rare, quiet rest at home. Not everyone is content to wait for the Cell Games, though — Earth's military has plans of its own.", "86": "In an attempt to revive the Dragon Balls, Goku tries to find the new planet where the Namekians are residing, with the help of King Kai — and to bring back a guardian for Earth.", "87": "The tournament is about to begin, and a hulking human with a devilish name is slated to be the first challenger! Can the arrogant champion Mr. Satan make good on his boasts, or will Cell teach him the meaning of the word pain?", "88": "Goku and Cell prepare to square off in what may be the greatest battle in history! Both fighters are hesitant to reveal their true powers, but once blows are exchanged, the violence quickly escalates.", "89": "Goku and Cell put on an amazing display of ferocious fighting! The monster makes things more interesting by blowing up the ring, and Goku responds with a devastating Kamehameha.", "90": "Goku and Cell battle until both warriors are winded and weary. With the fate of the world hanging in the balance, Goku makes a decision nobody saw coming.", "91": "Gohan replaces his father in the battle with Cell, but the boy appears to be no match for his monstrous opponent. His only hope is to unleash the fury lurking deep inside him — the power everyone has glimpsed since he was small.", "92": "Android 16 tries to take the bad guy out with a bang, Cell summons his miniature minions, the Cell Juniors, and a cowardly champion risks his life to deliver an important message to Gohan.", "93": "Gohan's rage boils over as he races to rescue his friends from the brink! Next, the boy gives his new powers a whirl in a bone-crushing battle with the menacing Cell Juniors.", "94": "Cell reveals the full force of his true power, but Gohan refuses to flinch in the face of danger. As the momentum swings, Goku calls for his son to finish it — if the boy's heart will let him.", "95": "Cell has one last trick up his sleeve — a devastating development that could destroy the world. For the sake of the future, Goku must prepare himself for the ultimate sacrifice.", "96": "Cell returns with intentions to wipe out planet Earth once and for all! Gohan is badly injured, but with a little help from his friends — and a pep talk from his father — he summons a Kamehameha that just might save the world.", "97": "In the aftermath of battle, Dende heals the injured heroes and summons the Dragon Balls in an attempt to bring back those lost during Cell's rampage — and to ask what cannot usually be asked.", "98": "Trunks returns to the future to reunite with his mother, carrying newfound strength — and unfinished business with the Androids who ruined his world.", "99": "Seven years after the battle with Cell, Gohan is now a high school student attending Orange Star High School — and trying, not always successfully, to live like an ordinary teenager.", "100": "Gohan creates an alias called the Great Saiyaman, allowing him to stop criminals while also concealing his true identity. Keeping that secret at a new school may be harder than any fight.", "101": "Gohan's heroics keep drawing attention — including a plane rescue and a city fire — while Videl, Satan City's own crime-fighter, chases the Great Saiyaman in her helicopter, determined to find out who is under the mask.", "102": "When a young pterodactyl named Chobi is captured by a circus, Gohan's rescue attempt is mistaken for a crime — and Videl is closing in on the Great Saiyaman's secret from both sides.", "103": "Word of the World Martial Arts Tournament spreads among the Z Fighters, and Gohan begins training with his little brother Goten — whose explosive power holds a surprise or two, even for a Super Saiyan's son.", "104": "Gohan teaches Videl the basics of learning to control her energy — the first step toward flight, and a lesson that requires more patience than power.", "105": "On the day of the tournament, Goku is allowed to return to Earth for a 24-hour visit, granted by Fortune Teller Baba. The whole Dragon Team assembles for the first time in seven years.", "106": "The preliminary rounds begin, and the combatants must hit a punching machine to rank their strength — a poor match for fighters who have battled Androids and Cell. Afterwards, everyone settles in to watch the juniors division.", "107": "Goku, Vegeta and the others spectate at the tournament while Gohan and Videl wait to take their preliminary test. In the juniors division, Goten and Trunks' battle has the whole stadium talking.", "108": "The juniors division reaches its final: Goten versus Trunks, best friends and rivals, with the winner set to face Mr. Satan himself in an exhibition match.", "109": "During an intermission, as Goku and the others get something to eat, they are encountered by two mysterious participants whose presence sets Piccolo and the others on edge.", "110": "Piccolo goes up against the mysterious being called Shin in the first round — and something about his opponent makes the former Demon King deeply uneasy.", "111": "Videl faces Spopovitch, a hulking fighter who competed years ago and barely lasted seconds — but something has changed in him, and Goku and the others can sense that Videl's match is not what it seems.", "112": "After Videl's brutal match with Spopovitch, Gohan's fury reaches its limit — and his own first-round match, against the mysterious Kibito, is about to begin.", "113": "Gohan rushes a Senzu bean to the infirmary, then steps into the ring to face Kibito, who is oddly eager to see Gohan's full power on display. The Supreme Kai asks the others not to intervene — whatever happens next.", "114": "Goku and the others arrive at the site of a buried spaceship and watch as Spopovitch and Yamu deliver stolen energy to the evil wizard Babidi and his partner, Dabura, King of the Demon Realm.", "115": "Goku, Vegeta, Gohan and the Supreme Kai chase after Dabura into the spaceship, where they are confronted by one of Babidi's minions, Pui Pui — the first of the wizard's staged defenses.", "116": "Babidi's ship is a gauntlet of warriors from across the galaxy, each guarding a floor. After Vegeta's turn against Pui Pui, Goku prepares to fight the light-devouring monster Yakon.", "117": "Dabura prepares to fight the Saiyans himself. Meanwhile, back at the tournament, a battle royal is held between the remaining contestants to decide the World's Greatest.", "118": "Android 18 continues fighting the mysterious Mighty Mask, whose strength and strange movements hide more than a costume should.", "119": "Android 18 weighs a deal involving Mr. Satan and the prize money. Meanwhile, inside Babidi's ship, Gohan takes his turn against Dabura.", "120": "As the battle between Dabura and Gohan continues, Babidi plots to sway Vegeta to his side using magic — probing for the evil the Saiyan prince still carries in his heart.", "121": "Babidi's magic sets the stage for the fight seven years in the making: Goku versus Vegeta, with nothing held back and the wizard's plans ticking away beneath them.", "122": "While the fight between Goku and Vegeta intensifies, Gohan and the Supreme Kai attempt to stop Majin Buu from being revived — racing the energy the duel above keeps pouring in.", "123": "As the fight between Goku and Vegeta escalates, Gohan attempts to stop Majin Buu's egg from reaching full power, with the Supreme Kai's hopes pinned on a single, desperate stand.", "124": "Majin Buu — the terror the Supreme Kai has dreaded for millions of years — is loose. Gohan and the Supreme Kai face a foe whose power defies everything they have felt before.", "125": "Majin Buu's bizarre powers turn everything — even Dabura's defiance — into a game, and his hunger makes him as unpredictable as he is strong. Fearing Buu cannot be controlled, everyone around him recalculates.", "126": "Vegeta goes to deal with the Majin himself, and is shocked by Buu's regenerative abilities — a monster that treats mortal wounds as a joke.", "127": "For the sake of the people he loves, Vegeta prepares a final, mortal combat against Majin Buu — the proud warrior's most desperate stand.", "128": "Word of Vegeta's stand spreads, and Goku faces the reality that Majin Buu remains at large. Meanwhile, a weakened Supreme Kai searches for Gohan, whose fate is still unknown.", "129": "Understanding that no one can defeat Majin Buu as they are, Goku pins the future on Goten and Trunks — and a technique called Fusion.", "130": "The Supreme Kai and Kibito finally find Gohan. Meanwhile, Babidi makes a worldwide announcement, putting every city on Earth on notice while the remaining warriors gather themselves.", "131": "The Supreme Kai reveals his plan to have Gohan master the legendary Z Sword in order to defeat Majin Buu. Meanwhile, Goku teaches the Fusion technique to Goten and Trunks.", "132": "As Majin Buu lays waste to another city, Goten and Trunks contact Babidi and inform him that they will soon be strong enough to fight Buu. Their Fusion training continues — poses, timing, and all.", "133": "Babidi and Majin Buu plan to destroy West City, so Goku confronts them, hoping to buy some time. Meanwhile, Trunks is on a mission to retrieve the Dragon Radar from West City before Buu gets there.", "134": "Goku's stalling tactic becomes a showcase: against Majin Buu, he unveils a level of Super Saiyan never seen before — knowing every second of it costs him time on Earth.", "135": "With his time on Earth running short, Goku wastes none of it, teaching Goten and Trunks the final key component to mastering the Fusion technique: the pose, performed in perfect sync.", "136": "Goku returns to the Other World, leaving Piccolo to continue training Goten and Trunks — and Earth to face Majin Buu with its youngest warriors.", "137": "Goku arrives in the Sacred World of the Kais, where Gohan has been training with the Z Sword — and the Kais are watching the young warrior's progress with great interest.", "138": "Finally mastering the Fusion Dance, Gotenks sets out in search of Majin Buu, despite Piccolo's protests. Meanwhile, the Elder Kai reveals he has the ability to unlock a warrior's true potential.", "139": "Gotenks arrives to fight Majin Buu — brimming with the confidence only a fused kid could have, and with Piccolo watching the clock on the Fusion's time limit.", "140": "The Elder Kai begins the long process of unlocking Gohan's true potential. Meanwhile, an unexpected friendship softens Majin Buu's rampage, and Gotenks practices becoming a Super Saiyan.", "141": "An act of cruelty in front of Majin Buu sparks something no one expected: the evil inside Buu given form of its own. What anger gives rise to may be worse than the Majin himself.", "142": "Majin Buu attempts to fight against the Evil Buu — a leaner, colder version of himself, revealed to be much more powerful. Two Buus enter the wasteland; the world's fate hangs on which one remains.", "143": "Piccolo tries to buy some time after the new Super Buu unleashes a devastating attack on the Earth. With Gohan's ritual unfinished and Fusion on a timer, every minute is precious.", "144": "Hoping to avenge their loved ones, Gotenks fights Super Buu in the Room of Spirit and Time — a battlefield sealed away from the world, with Piccolo making sure it stays that way.", "145": "Gotenks and Super Buu continue to fight, with Gotenks unleashing his special move called the Super Ghost Kamikaze Attack — an army of explosive ghosts with minds of their own.", "146": "Super Buu manages to escape the Room of Spirit and Time, causing Gotenks to finally unleash his trump card — and Piccolo to face the monster on the Lookout.", "147": "Gotenks and Super Buu continue their battle — with the fused warrior's flair for the dramatic turning the fight into a very unusual game of volleyball.", "148": "As the fight turns against a weakened Gotenks, a familiar presence approaches the battlefield: Gohan, returning to Earth at last, with the Elder Kai's ritual complete.", "149": "With newfound powers unlocked by the Elder Kai, Gohan fights Super Buu — no transformations, no holding back, just the full depth of the strength that was always inside him.", "150": "Super Buu, outmatched, devises a sinister plan to gain the upper hand against Gohan — and it begins with challenging Gotenks to a rematch.", "151": "Super Buu's plan unfolds, and the battle against Gohan takes a sudden turn. In the Sacred World of the Kais, the Elder Kai proposes a brainstorm: a way to bring Goku back to the fight.", "152": "Desperate to match Super Buu's power, Goku must convince Vegeta to fuse with him using the Potara earrings — a combination with no time limit, and no undoing.", "153": "The ultimate fusion of Goku and Vegeta, Vegito, fights Super Buu — with a confidence that borders on toying with the most dangerous being in the universe.", "154": "Vegito continues to fight Super Buu, who is clearly outmatched by the fused warrior. But Buu has one ace in the hole left, and Vegito seems almost to be waiting for it.", "155": "Super Buu absorbs Vegito — who had planned for the turn of events in order to save his friends and family. Inside the monster's body, a rescue mission begins.", "156": "Still inside Buu's body, Goku and Vegeta fight the beings manifesting from Buu's mind as they search for everyone the monster has taken.", "157": "Vegeta and Goku race to get their friends and family out of Buu's body — but freeing one particular prisoner threatens to change Buu into something older, and far less predictable.", "158": "The final showdown moves to the Sacred World of the Kais, where Goku faces the original Majin Buu — pure, ancient, and without a trace of mercy or reason.", "159": "Goku powers up to Super Saiyan 3 in an attempt to destroy Buu once and for all — a form that drains a living body far faster than it ever drained a dead one.", "160": "Vegeta steps in to fight Buu himself, buying an exhausted Goku the one minute he needs to regather his power — a stall for time with his life as the price of every second.", "161": "An inspired strategy comes together in a flash: two wishes on the Namekian Dragon Balls, a restored Earth, and one last plan that will need the help of every living soul.", "162": "Goku begins creating the Spirit Bomb in a final attempt to destroy Buu — but this time the energy must be offered freely by the people of Earth, and they do not know his voice.", "163": "Vegeta attempts to convince the people of Earth to give their energy for the Spirit Bomb, while Buu's assault forces him back into a fight he can barely stand through.", "164": "Goku struggles to destroy Buu, who pushes back against the Spirit Bomb with everything he has. The fate of the universe comes down to one throw — and the strength left in a single pair of hands.", "165": "Peace returns, and the warriors rest: Bulma invites the Z Fighters and friends to a barbecue at Capsule Corp, and even Goku's late arrival — held up by hatching dinosaur eggs in the mountains — is welcomed by his loved ones.", "166": "It has been ten years since Buu. Goku, Goten, Vegeta and Trunks enter the World Martial Arts Tournament, where they also meet up with old friends and family — and one mysterious young entrant.", "167": "The World Martial Arts Tournament begins, and Goku battles the mysterious fighter called Uub — a match Goku has waited ten years for, and the start of a brand-new journey."}</script>
+    <script>
+      (function () {
+        'use strict';
+
+        var TOTAL = 167;
+        var HOST = 'https://dn801209.us.archive.org/0/items/dbkai/';
+        var FALLBACK_HOST = 'https://archive.org/download/dbkai/';
+        /* The Faulconer Edition — a non-profit fan edit by JC Dragon
+           Ball, on archive.org: the same 167 episodes, English dialogue
+           exactly as in the original, with the original Japanese score
+           replaced by the remastered Bruce Faulconer score from the US
+           broadcast dub. Episode lengths match the original-score files
+           to about a second (same cut, music only), so one saved
+           position serves both editions. The app addresses episodes by
+           number, so the edition's known quirk — episode 99 sitting at
+           the end of the item's stream list — never applies here. */
+        var FAULC_ID = 'Dragon-Ball-Z-Kai-Faulconer-Edition-by-JC-Dragon-Ball';
+        var FAULC_HOST = 'https://ia801006.us.archive.org/0/items/' + FAULC_ID + '/';
+        var FAULC_FALLBACK_HOST = 'https://archive.org/download/' + FAULC_ID + '/';
+        var FAULC_FILES = {"1":"Season 1 - The Saiyan Saga/Episode 1, Prologue to Battle! The Return of Goku!.mp4","2":"Season 1 - The Saiyan Saga/Episode 2, The Enemy is Goku's Brother! The Secret of the Mighty Saiyan Warriors.mp4","3":"Season 1 - The Saiyan Saga/Episode 3, A Life or Death Battle! Goku and Piccolo's Desperate Attack!.mp4","4":"Season 1 - The Saiyan Saga/Episode 4, Run in the Afterlife Goku! The One Million Mile Snake Way! .mp4","5":"Season 1 - The Saiyan Saga/Episode 5, Wilderness Survival! A Moonlit Night Awakens Gohan!.mp4","6":"Season 1 - The Saiyan Saga/Episode 6, The End of Snake Way! King Kai's Bizarre Test!.mp4","7":"Season 1 - The Saiyan Saga/Episode 7, The Battle with Ten-Times Gravity! Goku's Race Against the Clock!.mp4","8":"Season 1 - The Saiyan Saga/Episode 8, Shenron Appears! The Saiyans Arrive Sooner than Expected!.mp4","9":"Season 1 - The Saiyan Saga/Episode 9, Yamcha's Struggle! The Terrible Saibamen!.mp4","10":"Season 1 - The Saiyan Saga/Episode 10, Sit Tight Chiaotzu! Tien's Screaming Tri-Beam!.mp4","11":"Season 1 - The Saiyan Saga/Episode 11, Will Goku Make it in Time! Three Hours Until the Battle Resumes!.mp4","12":"Season 1 - The Saiyan Saga/Episode 12, Farewell Piccolo! Goku's Furious Counterattack!.mp4","13":"Season 1 - The Saiyan Saga/Episode 13, The Power of the Kaio-Ken vs. Vegeta!.mp4","14":"Season 1 - The Saiyan Saga/Episode 14, An All-Out Kamehame-Ha! Vegeta's Terrible Transformation!.mp4","15":"Season 1 - The Saiyan Saga/Episode 15, Goku on the Ropes! Pin Your Hopes on the Spirit Bomb!.mp4","16":"Season 1 - The Saiyan Saga/Episode 16, Defeat the Invincible Vegeta! Work a Miracle, Gohan!.mp4","17":"Season 1 - The Saiyan Saga/Episode 17, Dawn of the Fierce Battle! The Star of Hope is Piccolo's Homeland!.mp4","18":"Season 2 - The Namek Saga/Episode 18, The Ship Resting in Yunzabit! Time to Blast Off for Planet Namek!.mp4","19":"Season 2 - The Namek Saga/Episode 19, A Powerful New Foe! Frieza, Ruler of the Universe!.mp4","20":"Season 2 - The Namek Saga/Episode 20, The Rebellion Against Frieza! Vegeta's Burning Ambition!.mp4","21":"Season 2 - The Namek Saga/Episode 21, Protect the Dragon Balls! The Namekians' All-Out Attack!.mp4","22":"Season 2 - The Namek Saga/Episode 22, Dodoria's Terrifying Chase! A Truth Revealed to Vegeta!.mp4","23":"Season 2 - The Namek Saga/Episode 23, Vegeta's Covert Maneuvers! A Tragic Assault on the Namekians!.mp4","24":"Season 2 - The Namek Saga/Episode 24, Friends Reborn! Zarbon's Hideous Transformation!.mp4","25":"Season 2 - The Namek Saga/Episode 25, Power Up Krillin! Frieza's Mounting Apprehension!.mp4","26":"Season 2 - The Namek Saga/Episode 26, The Scheme Is Shattered! Vegeta Strikes Back at Zarbon!.mp4","27":"Season 2 - The Namek Saga/Episode 27, A Touch-and-Go Situation! Gohan, Protect the Four-Star Ball!.mp4","28":"Season 2 - The Namek Saga/Episode 28, The Countdown to Battle Begins! Enter, The Ginyu Force!.mp4","29":"Season 2 - The Namek Saga/Episode 29, First Up for the Ginyu Force! Guldo's Time Freeze!.mp4","30":"Season 2 - The Namek Saga/Episode 30, The Nightmare Recoome! Come Out and Play, Vegeta!.mp4","31":"Season 2 - The Namek Saga/Episode 31, Goku Arrives At Last! Take Down the Ginyu Force!.mp4","32":"Season 2 - The Namek Saga/Episode 32, The Star Player Appears! Ginyu vs Goku!.mp4","33":"Season 2 - The Namek Saga/Episode 33, Full Power Goku! Captain Ginyu's Desperate Attack!.mp4","34":"Season 2 - The Namek Saga/Episode 34, Surprise! Goku is Ginyu and Ginyu is Goku!.mp4","35":"Season 2 - The Namek Saga/Episode 35, Goku's Comeback! Call Forth Porunga!.mp4","36":"Season 2 - The Namek Saga/Episode 36, Frieza Closes In! Mighty Porunga, Grant Our Wish!.mp4","37":"Season 3 - The Frieza Saga/Episode 37, A Nightmare Transformation! Frieza's Power Level-One Million!.mp4","38":"Season 3 - The Frieza Saga/Episode 38, Frieza Bares His Fangs! Gohan's Overwhelming Attack!.mp4","39":"Season 3 - The Frieza Saga/Episode 39, Piccolo Reborn! Frieza's Second Transformation.mp4","40":"Season 3 - The Frieza Saga/Episode 40, Frieza's Final Transformation! The Ultimate Nightmare Begins!.mp4","41":"Season 3 - The Frieza Saga/Episode 41, The Moment of Truth Approaches! Goku Back in Action!.mp4","42":"Season 3 - The Frieza Saga/Episode 42, Defeat Frieza Goku! The Tears of the Proud Saiyan Prince!.mp4","43":"Season 3 - The Frieza Saga/Episode 43, Goku vs. Frieza! The Super Showdown Begins!.mp4","44":"Season 3 - The Frieza Saga/Episode 44, A Boundary-Pushing Brawl! Goku, Frieza, and Ginyu Again!.mp4","45":"Season 3 - The Frieza Saga/Episode 45, Kaio-Ken Times Twenty! An All-Or-Nothing Kamehame-Ha!.mp4","46":"Season 3 - The Frieza Saga/Episode 46, The Final Trump Card! Goku's Ultimate Spirit Bomb!.mp4","47":"Season 3 - The Frieza Saga/Episode 47, Awaken Legendary Warrior! Goku the Super Saiyan!.mp4","48":"Season 3 - The Frieza Saga/Episode 48, The Angry Super Saiyan! Goku Throws Down the Gauntlet!.mp4","49":"Season 3 - The Frieza Saga/Episode 49, Avenge the Fallen Goku! Countdown to the Planet's Destruction!.mp4","50":"Season 3 - The Frieza Saga/Episode 50, Full Power Frieza! Shenron, Grant Our Wish!.mp4","51":"Season 3 - The Frieza Saga/Episode 51, Goku's Furious Roar! A Last-Minute Resurrection Wish!.mp4","52":"Season 3 - The Frieza Saga/Episode 52, Duel on a Vanishing Planet! The Final Showdown!.mp4","53":"Season 3 - The Frieza Saga/Episode 53, Goku's Final Attack! Countdown to Planet Namek's Destruction!.mp4","54":"Season 3 - The Frieza Saga/Episode 54, Goku Vanishes Into Space! Welcome Home, Super Warriors!.mp4","55":"Season 3 - The Frieza Saga/Episode 55, There Is Planet Earth Father! Frieza and King Cold Strike Back!.mp4","56":"Season 3 - The Frieza Saga/Episode 56, I Will Defeat Frieza! Another Super Saiyan!.mp4","57":"Season 4 - The Android Saga/Episode 57, Welcome Back Goku! Confessions of the Mysterious Youth, Trunks!.mp4","58":"Season 4 - The Android Saga/Episode 58, Goku's New Move! Instant Transmission! The Three-Year Training Session Begins!.mp4","59":"Season 4 - The Android Saga/Episode 59, Undetectable Monsters! The Androids Appear!.mp4","60":"Season 4 - The Android Saga/Episode 60, The Unbeatable Enemy Within! Goku vs. Android 19!.mp4","61":"Season 4 - The Android Saga/Episode 61, No Victory for Android 19! Enter Super Vegeta!.mp4","62":"Season 4 - The Android Saga/Episode 62, Piccolo's Assault! Android 20 and the Twisted Future!.mp4","63":"Season 4 - The Android Saga/Episode 63, The Hunt for Doctor Gero! Discover the Hidden Laboratory!.mp4","64":"Season 4 - The Android Saga/Episode 64, Number 17 and Number 18! The Androids Awaken!.mp4","65":"Season 4 - The Android Saga/Episode 65, A Sweet Face and Super Power! Android 18 vs Vegeta!.mp4","66":"Season 4 - The Android Saga/Episode 66, The Time for Reunification Has Come! Piccolo's Unshakeable Resolve!.mp4","67":"Season 4 - The Android Saga/Episode 67, Another Time Machine! Bulma Uncovers a Mystery!.mp4","68":"Season 5 - The Cell Saga/Episode 68, The Monster Goes into Motion... Strike of the Super Namekian!.mp4","69":"Season 5 - The Cell Saga/Episode 69, I Am Your Brother! The Monster With Goku's Energy!.mp4","70":"Season 5 - The Cell Saga/Episode 70, The Dizzying Deception and the Daring Escape! Defeat the Android Cell!.mp4","71":"Season 5 - The Cell Saga/Episode 71, The Hunt for Cell Is On! Goku, Back in Action!.mp4","72":"Season 5 - The Cell Saga/Episode 72, Break the Super Saiyan Barrier! Into the Hyperbolic Time Chamber!.mp4","73":"Season 5 - The Cell Saga/Episode 73, The Super Namekian Powers Up! Piccolo vs. Android 17!.mp4","74":"Season 5 - The Cell Saga/Episode 74, Run Android 17! Piccolo's All-or-Nothing Struggle!.mp4","75":"Season 5 - The Cell Saga/Episode 75, Power Unknown! Android 16 Breaks His Silence!.mp4","76":"Season 5 - The Cell Saga/Episode 76, Tien's Desperate Attack! Save Your Friends, Goku!.mp4","77":"Season 5 - The Cell Saga/Episode 77, Beyond Super Saiyan! Vegeta Confronts the Monster Cell!.mp4","78":"Season 5 - The Cell Saga/Episode 78, Cell on the Verge of Defeat! Krillin, Destroy Android 18!.mp4","79":"Season 5 - The Cell Saga/Episode 79, The Battle Turns for the Worst... Cell Attacks Android 18!.mp4","80":"Season 5 - The Cell Saga/Episode 80, The Tables Are Turned! Witness the Power of Perfection!.mp4","81":"Season 5 - The Cell Saga/Episode 81, Vegeta's Final Push! Defeat the Invincible Cell!.mp4","82":"Season 5 - The Cell Saga/Episode 82, The Strongest Super Saiyan! Trunks' Power Unleashed!.mp4","83":"Season 5 - The Cell Saga/Episode 83, Cell Invades the Airwaves! Announcing, The Cell Games!.mp4","84":"Season 5 - The Cell Saga/Episode 84, Training Complete! Goku Sizes Up the Competition!.mp4","85":"Season 5 - The Cell Saga/Episode 85, The Truce is Broken! The Defense Force Strikes Back at Cell!.mp4","86":"Season 5 - The Cell Saga/Episode 86, A New Guardian! The Return of the Dragon Balls!.mp4","87":"Season 5 - The Cell Saga/Episode 87, Mr. Satan Takes the Stage! The Curtain Rises on the Cell Games!.mp4","88":"Season 5 - The Cell Saga/Episode 88, Showdown! Cell vs. Goku!.mp4","89":"Season 5 - The Cell Saga/Episode 89, Battle at the Highest Level! Goku Goes All Out!.mp4","90":"Season 5 - The Cell Saga/Episode 90, The Opening Round Is Concluded! Goku's Moment of Decision!.mp4","91":"Season 5 - The Cell Saga/Episode 91, Get Angry Gohan! Release Your Hidden Power!.mp4","92":"Season 5 - The Cell Saga/Episode 92, Tears For An Android! Gohan's Inner Rage Bursts Forth!.mp4","93":"Season 5 - The Cell Saga/Episode 93, Unleash the Warrior Within! Gohan Takes the Offensive!.mp4","94":"Season 5 - The Cell Saga/Episode 94, Perfection's End! A Fury, Beyond Super Saiyan!.mp4","95":"Season 5 - The Cell Saga/Episode 95, A Hero's Sacrifice! Last Chance to Save the World!.mp4","96":"Season 5 - The Cell Saga/Episode 96, Combine Your Strength! The Final Kamehame-Ha!.mp4","97":"Season 5 - The Cell Saga/Episode 97, A Bittersweet Victory! Until We Meet Again!.mp4","98":"Season 5 - The Cell Saga/Episode 98, Peace For the Future! The Spirit of Goku is Forever!.mp4","99":"Season 6 - The Buu Saga/Episode 99, Seven Years Later! Starting Today, Gohan Is a High School Student!.mp4","100":"Season 6 - The Buu Saga/Episode 100, A New Hero Great Saiyaman Is Born!.mp4","101":"Season 6 - The Buu Saga/Episode 101, Videl's Crisis Gohan's Urgent Call-out!.mp4","102":"Season 6 - The Buu Saga/Episode 102, A Monster is Taken Away! The Culprit is Great Saiyaman!.mp4","103":"Season 6 - The Buu Saga/Episode 103, Entering the World Martial Arts Tournament! Goten Shows Off His Explosive Power During Training!.mp4","104":"Season 6 - The Buu Saga/Episode 104, Gohan the Teacher! Videl's Flying Technique Tutorial!.mp4","105":"Season 6 - The Buu Saga/Episode 105, The Dragon Team Fully Assembled! Goku Has Come Back!.mp4","106":"Season 6 - The Buu Saga/Episode 106, Who Is the World's Greatest! The Tournament Preliminaries Begin!.mp4","107":"Season 6 - The Buu Saga/Episode 107, Everyone is Surprised! Goten and Trunks' Super Battle!.mp4","108":"Season 6 - The Buu Saga/Episode 108, The Junior Champ Is Finally Decided! Who Will Fight Against Mr. Satan!.mp4","109":"Season 6 - The Buu Saga/Episode 109, Restless Foreboding; A Mysterious Warrior Appears!.mp4","110":"Season 6 - The Buu Saga/Episode 110, What Happened! Piccolo! An Unexpected Outcome in the First Round!.mp4","111":"Season 6 - The Buu Saga/Episode 111, An Eerie Entity; Who Exactly Is Spopovitch.mp4","112":"Season 6 - The Buu Saga/Episode 112, Videl Battered! Gohan's Fury Reaches Its Limit!.mp4","113":"Season 6 - The Buu Saga/Episode 113, A Creeping Conspiracy! The Target is Gohan!.mp4","114":"Season 6 - The Buu Saga/Episode 114, The Terrifying Secret of the Majin; The Mastermind Revealed!.mp4","115":"Season 6 - The Buu Saga/Episode 115, The Nefarious Wizard Babidi And Demon King Dabura's Trap!.mp4","116":"Season 6 - The Buu Saga/Episode 116, Don't Sell Super Saiyans Short! Vegeta and Goku's Full-Bore Power!.mp4","117":"Season 6 - The Buu Saga/Episode 117, Whither Victory A Battle Royal Championship Match!.mp4","118":"Season 6 - The Buu Saga/Episode 118, Stunning Youngsters! No. 18's Uphill Battle!.mp4","119":"Season 6 - The Buu Saga/Episode 119, Enter the Headliner! The Looming Demon King!.mp4","120":"Season 6 - The Buu Saga/Episode 120, A Heart of Evil Awakened; Vegeta, Prince of Destruction!.mp4","121":"Season 6 - The Buu Saga/Episode 121, I am the Strongest! The Clash of Goku vs. Vegeta!.mp4","122":"Season 6 - The Buu Saga/Episode 122, Countdown to Revival Crush Babidi's Ambitions!.mp4","123":"Season 6 - The Buu Saga/Episode 123, The Seal is Released! Gohan's Kamehame-Ha of Resistance.mp4","124":"Season 6 - The Buu Saga/Episode 124, Straightaway Into Despair! The Terror of Majin Buu!.mp4","125":"Season 6 - The Buu Saga/Episode 125, Turn Into Candy! A Hungry Majin's Bizarre Power!.mp4","126":"Season 6 - The Buu Saga/Episode 126 I Will Deal With the Majin! Vegeta's Final Mortal Combat!.mp4","127":"Season 6 - The Buu Saga/Episode 127 For His Beloved Ones... The End of the Proud Warrior!.mp4","128":"Season 6 - The Buu Saga/Episode 128 A Nightmare Revisited! The Immortal Monster Majin Buu!.mp4","129":"Season 6 - The Buu Saga/Episode 129 A Secret Plan to Defeat Buu! Its Name is Fusion!.mp4","130":"Season 6 - The Buu Saga/Episode 130 Found! A Faint Ray of Hope... Awaken, Warriors!.mp4","131":"Season 6 - The Buu Saga/Episode 131 Find the Nuisances! Babidi's Retaliation Begins!.mp4","132":"Season 6 - The Buu Saga/Episode 132 A Time of Trials! Lay Hold of Legendary Powers!.mp4","133":"Season 6 - The Buu Saga/Episode 133 Hold Majin Buu in Check! Limit - Super Saiyan 3!.mp4","134":"Season 6 - The Buu Saga/Episode 134 True Worth Beginning to Show! The Treacherous Buu!.mp4","135":"Season 6 - The Buu Saga/Episode 135 Silly Looking Drilling the Fusion Pose!.mp4","136":"Season 6 - The Buu Saga/Episode 136 Bye-bye, Everyone! Goku Returns to the Next World!.mp4","137":"Season 6 - The Buu Saga/Episode 137 Gohan Located! Intensive Training in the World of the Kais!.mp4","138":"Season 6 - The Buu Saga/Episode 138 Birth of a Merged Superwarrior! His Name is Gotenks!.mp4","139":"Season 6 - The Buu Saga/Episode 139 Who Will Defeat Majin Buu! The Mightiest of Men Moves Out!!.mp4","140":"Season 6 - The Buu Saga/Episode 140 The Powering Up Continues! Super Gotenks is Achieved!.mp4","141":"Season 6 - The Buu Saga/Episode 141 What Anger Gives Rise To Another Majin!.mp4","142":"Season 6 - The Buu Saga/Episode 142 Buu Gobbles Up Buu! Onslaught of a New Majin!.mp4","143":"Season 6 - The Buu Saga/Episode 143 Headlong Rush Into Catastrophe! A One-Hour Time Limit!.mp4","144":"Season 6 - The Buu Saga/Episode 144 Training Complete! You're Finished Now, Majin Buu!.mp4","145":"Season 6 - The Buu Saga/Episode 145 Eliminating Buu with Ghosts A Knockout Kamikaze Attack!.mp4","146":"Season 6 - The Buu Saga/Episode 146 Gotenks' Ace in the Hole! Transformation! Super Saiyan 3!.mp4","147":"Season 6 - The Buu Saga/Episode 147 On a Roll! Buu-Buu-Volleyball!.mp4","148":"Season 6 - The Buu Saga/Episode 148 Thanks for Waiting Everyone! A Reborn Gohan Heads for Earth!.mp4","149":"Season 6 - The Buu Saga/Episode 149 Buu Overwhelmed! Ultimate Gohan's Super Power!.mp4","150":"Season 6 - The Buu Saga/Episode 150 Buu's Sinister Scheme! Gotenks is Absorbed!.mp4","151":"Season 6 - The Buu Saga/Episode 151 The Elder Kai's Brainstorm! Return to Life Goku!.mp4","152":"Season 6 - The Buu Saga/Episode 152 Miracles Happen Once... Will Goku and He Make the Ultimate Combination.mp4","153":"Season 6 - The Buu Saga/Episode 153 Invincible! The Ultimate Warrior Vegito!.mp4","154":"Season 6 - The Buu Saga/Episode 154 Buu's Ace in the Hole! The Warriors Are Absorbed!.mp4","155":"Season 6 - The Buu Saga/Episode 155 Rescue Gohan and the Others! Goku and Vegeta's Infiltration Mission!.mp4","156":"Season 6 - The Buu Saga/Episode 156 Emergency Escape from the Body! Buu's Retrogression Into Evil!.mp4","157":"Season 6 - The Buu Saga/Episode 157 Earth Destroyed! The Initial Buu's Nefarious Strike!.mp4","158":"Season 6 - The Buu Saga/Episode 158 A Final Showdown at the Summit! Face-Off in the World of the Kais!.mp4","159":"Season 6 - The Buu Saga/Episode 159 Hang In There, Kakarot! You Are No. 1!.mp4","160":"Season 6 - The Buu Saga/Episode 160 A One Minute Matchup! Vegeta's Life Threatening Stall for Time!.mp4","161":"Season 6 - The Buu Saga/Episode 161 An Inspired Strategy! Make Two Wishes Come True!.mp4","162":"Season 6 - The Buu Saga/Episode 162 Share Your Spirit Energy with Me! I'm Making a Huge Spirit Bomb!.mp4","163":"Season 6 - The Buu Saga/Episode 163 You Are the Savior of the World! Everybody's Spirit Bomb Completed!.mp4","164":"Season 6 - The Buu Saga/Episode 164 You Really Are the Greatest, Goku!! The Demise of Majin Buu!.mp4","165":"Season 6 - The Buu Saga/Episode 165 Peace Has Returned! It's Time to Party!.mp4","166":"Season 6 - The Buu Saga/Episode 166 And So, Ten Years Later... A Long-Awaited World Martial Arts Tournament!.mp4","167":"Season 6 - The Buu Saga/Episode 167 Even Stronger! Goku's Dream is Never-Ending!.mp4"};
+        var STORE_KEY = 'dbkai-jobs-prototype-v1';
+        var edition = 'original'; /* the store load below may restore 'faulconer' */
+
+        function epFile(n) {
+          var nn = (n < 10 ? '0' : '') + n;
+          return 'Dragon%20Ball%20Kai%20-%20' + nn + '.mp4';
+        }
+        /* Faulconer file names carry spaces, commas, semicolons and
+           apostrophes; encode each path segment exactly as
+           archive.org serves it (verified against the item). */
+        function encodePath(p) {
+          return p.split('/').map(function (seg) {
+            return encodeURIComponent(seg)
+              .replace(/'/g, '%27').replace(/!/g, '%21')
+              .replace(/\(/g, '%28').replace(/\)/g, '%29')
+              .replace(/\*/g, '%2A');
+          }).join('/');
+        }
+        function epUrl(n) {
+          if (edition === 'faulconer') return FAULC_HOST + encodePath(FAULC_FILES[n]);
+          return HOST + epFile(n);
+        }
+        function epFallbackUrl(n) {
+          if (edition === 'faulconer') return FAULC_FALLBACK_HOST + encodePath(FAULC_FILES[n]);
+          return FALLBACK_HOST + epFile(n);
+        }
+
+        /* ----- per-device progress ----- */
+        var store = { ep: 1, pos: {}, done: {}, edition: 'original' };
+        try {
+          var raw = localStorage.getItem(STORE_KEY);
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && typeof parsed.ep === 'number' && parsed.ep >= 1 && parsed.ep <= TOTAL) {
+              store = { ep: parsed.ep, pos: parsed.pos || {}, done: parsed.done || {},
+                        edition: parsed.edition === 'faulconer' ? 'faulconer' : 'original' };
+            }
+          }
+        } catch (e) { /* private mode etc. — session still works */ }
+        edition = store.edition;
+
+        function save() {
+          try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {}
+        }
+
+        /* ----- elements ----- */
+        var video = document.getElementById('player');
+        var preloader = document.getElementById('preloader');
+        var stage = document.getElementById('stage');
+        var stageLoading = document.getElementById('stageLoading');
+        var bigPlay = document.getElementById('bigPlay');
+        var spinner = document.getElementById('spinner');
+        var streamError = document.getElementById('streamError');
+        var sheet = document.getElementById('sheet');
+        var backdrop = document.getElementById('backdrop');
+        var sheetList = document.getElementById('sheetList');
+        var episodeNum = document.getElementById('episodeNum');
+        var episodeTitle = document.getElementById('episodeTitle');
+
+        var current = store.ep;
+        var fallbackUsed = false;
+        var hasFrame = false;
+        var metaArrived = false;
+        var loadSeq = 0;
+        var stallTimer = null;
+        var revealTimer = null;
+        var inPip = false;
+        var errorShown = false;
+        var pendingStartAt = 0;
+        var preloadedEp = 0;
+        var warmedFor = 0;
+        var castSession = null;
+        /* Playback-stall watchdog state. The load watchdog above only
+           covers the wait for metadata; once an episode is playing,
+           these track whether its clock is actually advancing. */
+        var wantPlay = false;
+        var lastSeenTime = 0;
+        var lastProgressAt = 0;
+        var stallRecoveries = 0;
+        var lastRecoveryAt = 0;
+        var pendingMetaHandler = null;
+
+        /* ----- older Chrome: the A9 and its Marshmallow-era builds -----
+           LEGACY means a browser that predates the modern platform
+           this app was written against: a Chrome older than 70, or
+           any engine without aspect-ratio (Chrome 88 and Safari 15
+           are where that arrived). On such a browser three things
+           change, all in service of the one episode playing:
+           the Cast SDK is never fetched (the modern framework
+           cannot run there, and its three requests only delay the
+           episode), the next episode is never pre-downloaded in
+           parallel (a second full stream starves the first on a
+           2 GB phone and freezes the frame), and the stall
+           watchdogs allow roughly double the time before calling
+           a slow device a stalled stream. Detection is capability
+           first, UA second, and a browser that cannot run the
+           check at all is treated as modern — never the reverse. */
+        var LEGACY = false;
+        try {
+          var uaChrome = /Chrome\/(\d+)/.exec(navigator.userAgent || '');
+          LEGACY = !!((uaChrome && parseInt(uaChrome[1], 10) < 70) ||
+            !(window.CSS && CSS.supports && CSS.supports('aspect-ratio', '16 / 9')));
+        } catch (e) { LEGACY = false; }
+        var STALL_MS = LEGACY ? 30000 : 15000;
+        var PLAY_STALL_MS = LEGACY ? 25000 : 15000;
+
+        /* classList.toggle(name, force) is Chrome 50+; before that
+           the second argument is ignored and the class flips —
+           which would light every row in the Library at once.
+           Set classes explicitly, the way every browser honors. */
+        function setClass(el, name, on) {
+          if (on) el.classList.add(name); else el.classList.remove(name);
+        }
+
+        function isDone(n) { return !!store.done[n]; }
+        function savedPos(n) { return store.pos[n] || 0; }
+        function clearPreloader(el) {
+          try { el.removeAttribute('src'); el.load(); } catch (e) {}
+        }
+
+        /* Stop the warm-up download outright. While the episode on
+           screen is short of data, a second full download of the
+           next episode only starves it further — the exact loop
+           that turns a brief stall into a frozen frame. warmedFor
+           keeps its mark, so the warm-up is not retried for this
+           episode; the next one warms up fresh. */
+        function suspendPreloader() {
+          if (!preloadedEp) return;
+          clearPreloader(preloader);
+          preloadedEp = 0;
+        }
+
+        /* Only one metadata handler may be pending at a time. A
+           handler left over from a load that stalled or errored
+           before its metadata arrived would otherwise fire on the
+           recovery load and seek it to the wrong episode's moment. */
+        function setPendingMeta(handler) {
+          if (pendingMetaHandler && pendingMetaHandler !== handler) {
+            try { video.removeEventListener('loadedmetadata', pendingMetaHandler); } catch (e) {}
+          }
+          pendingMetaHandler = handler;
+          video.addEventListener('loadedmetadata', handler);
+        }
+        function clearPendingMeta() {
+          if (!pendingMetaHandler) return;
+          try { video.removeEventListener('loadedmetadata', pendingMetaHandler); } catch (e) {}
+          pendingMetaHandler = null;
+        }
+
+        /* If there is no video in the frame, there is no frame.
+           Picture-in-picture or still loading: the stage collapses
+           and the episode line stands on the linen alone.
+           Loading is a spinner on the linen — never a black box.
+           A stream that truly failed still gets its stage back,
+           because the error panel and its retry live there. */
+        function applyStageVisibility() {
+          if (inPip) {
+            stage.classList.add('gone');
+            stageLoading.classList.remove('show');
+          } else if (errorShown || hasFrame) {
+            stage.classList.remove('gone');
+            stageLoading.classList.remove('show');
+          } else {
+            stage.classList.add('gone');
+            stageLoading.classList.add('show');
+          }
+        }
+
+        /* ----- the episode line: number and title, under the video.
+           Nothing else on the main screen speaks; moving between
+           episodes is the Library's job, and a finished episode
+           advances on its own. ----- */
+        function renderEpisodeLine() {
+          episodeNum.textContent = 'Episode ' + current;
+          episodeTitle.textContent = EP_TITLES[current] || '';
+        }
+
+        /* A stream that neither loads nor errors must never leave
+           the app sitting on a spinner forever — that is a freeze.
+           Going STALL_MS without even the episode's metadata is
+           treated as a failed load: the fallback host gets its
+           chance, and if it also stalls, the one-line error and
+           Try Again appear instead. Metadata is the line, not the first
+           frame: some browsers (iOS Safari above all) will not
+           buffer an unmuted video until it is tapped, so a frame
+           may legitimately wait on the viewer — but a missing file
+           never sends metadata at all. Waiting for a tap, or
+           waiting in a background tab, is not a stall either. */
+        function clearStall() {
+          if (stallTimer) { clearTimeout(stallTimer); stallTimer = null; }
+        }
+        function armStall(seq) {
+          clearStall();
+          stallTimer = setTimeout(function () {
+            stallTimer = null;
+            if (seq !== loadSeq || metaArrived || errorShown) return;
+            if (bigPlay.classList.contains('show')) return;
+            if (document.hidden) { armStall(seq); return; }
+            onPlayerError();
+          }, STALL_MS);
+        }
+
+        /* The stage is revealed the moment the episode proves it
+           exists — its metadata — so the controls and the big Play
+           are always tappable. If even that takes more than a few
+           seconds, the stage appears anyway: a visible player the
+           viewer can tap beats a spinner on the linen, always. */
+        function clearReveal() {
+          if (revealTimer) { clearTimeout(revealTimer); revealTimer = null; }
+        }
+        function armReveal(seq) {
+          clearReveal();
+          revealTimer = setTimeout(function () {
+            revealTimer = null;
+            if (seq !== loadSeq || errorShown) return;
+            hasFrame = true;
+            applyStageVisibility();
+          }, 4000);
+        }
+        function revealStage() {
+          clearReveal();
+          if (!hasFrame) { hasFrame = true; applyStageVisibility(); }
+        }
+
+        /* One handler for every fresh load — the episode itself and
+           its fallback retry alike: when the metadata lands, seek
+           to the saved moment and play. Fires once, then removes
+           itself. */
+        function metadataHandler(pos) {
+          var done = false;
+          function onMeta() {
+            video.removeEventListener('loadedmetadata', onMeta);
+            if (pendingMetaHandler === onMeta) pendingMetaHandler = null;
+            if (done) return;
+            done = true;
+            metaArrived = true;
+            revealStage();
+            if (pos > 5 && video.duration && pos < video.duration - 20) {
+              try { video.currentTime = pos; } catch (e) {}
+            }
+            tryPlay();
+          }
+          return onMeta;
+        }
+
+        /* ----- loading an episode ----- */
+        function loadEpisode(n, opts) {
+          opts = opts || {};
+          var startAt = typeof opts.at === 'number' ? opts.at : (opts.fromStart ? 0 : savedPos(n));
+          /* If the preloader already holds this episode and actually
+             buffered a frame, it becomes the player (see
+             promotePreloader) and its data is reused — never
+             re-fetched. A preloader holding only metadata (common
+             on iOS) would strand the stage on a black frame, so
+             anything else loads cold on the stage player. */
+          var useWarm = preloadedEp === n && preloader !== video &&
+            !preloader.error && preloader.src === epUrl(n) &&
+            preloader.readyState >= 2;
+          current = n;
+          store.ep = n;
+          fallbackUsed = false;
+          hasFrame = false;
+          metaArrived = false;
+          errorShown = false;
+          stage.classList.add('switching');
+          streamError.classList.remove('show');
+          bigPlay.classList.remove('show');
+          spinner.classList.add('show');
+
+          pendingStartAt = startAt;
+          wantPlay = false;
+          lastSeenTime = startAt;
+          lastProgressAt = Date.now();
+          stallRecoveries = 0;
+          clearPendingMeta();
+          armStall(++loadSeq);
+          armReveal(loadSeq);
+
+          var onMeta = metadataHandler(startAt);
+
+          if (useWarm) {
+            promotePreloader();
+            if (video.readyState >= 2) hasFrame = true;
+            if (video.readyState >= 1) onMeta();
+            else setPendingMeta(onMeta);
+          } else {
+            /* If the preloader holds this same episode without a
+               usable frame, stop it — two downloads of one file
+               only starve each other. */
+            if (preloadedEp === n) {
+              clearPreloader(preloader);
+              preloadedEp = 0;
+              warmedFor = 0;
+            }
+            video.src = epUrl(n);
+            video.load();
+            setPendingMeta(onMeta);
+          }
+          applyStageVisibility();
+
+          renderEpisodeLine();
+          save();
+          if (castSession) castLoad(n, startAt);
+        }
+
+        /* The warm-up becomes the player: the preloaded element moves
+           into the stage with its buffered data intact — no new src,
+           no load(), no cold metadata wait. It gains controls and
+           sound; the old player is emptied, hidden, and recycled as
+           the fresh preloader, which warmNext then fills with the
+           following episode. */
+        function promotePreloader() {
+          var old = video;
+          var next = preloader;
+          unbindPlayer(old);
+          try { old.pause(); } catch (e) {}
+          inPip = false;
+          next.id = 'player';
+          next.removeAttribute('style');
+          next.removeAttribute('muted');
+          next.muted = false;
+          next.setAttribute('controls', '');
+          old.id = 'preloader';
+          old.removeAttribute('controls');
+          old.setAttribute('muted', '');
+          old.muted = true;
+          old.style.display = 'none';
+          stage.replaceChild(next, old);
+          document.body.appendChild(old);
+          clearPreloader(old);
+          video = next;
+          preloader = old;
+          preloadedEp = 0;
+          warmedFor = 0;
+          bindPlayer(video);
+        }
+
+        function tryPlay() {
+          wantPlay = true;
+          lastProgressAt = Date.now();
+          var p = video.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function () {
+              /* Autoplay refused: the episode is waiting for a tap,
+                 not stalled — stand the watchdogs down and make sure
+                 the Play button is on screen to be tapped. */
+              wantPlay = false;
+              clearStall();
+              revealStage();
+              bigPlay.classList.add('show');
+            });
+          } else {
+            /* Older Chrome: play() returns nothing at all, and a
+               refused autoplay is silent — no rejection to catch,
+               no error event. If the episode still hasn't started
+               a moment later, it is waiting for a tap: stand the
+               watchdogs down and put the big Play on screen, the
+               same end state the promise path reaches. If it did
+               start, 'playing' has already taken care of the UI. */
+            var seqAtCall = loadSeq;
+            setTimeout(function () {
+              if (seqAtCall !== loadSeq || errorShown) return;
+              if (!video.paused || video.ended || !video.src) return;
+              wantPlay = false;
+              clearStall();
+              revealStage();
+              bigPlay.classList.add('show');
+            }, 900);
+          }
+        }
+
+        bigPlay.addEventListener('click', function () {
+          bigPlay.classList.remove('show');
+          tryPlay();
+        });
+
+        function onPlayerPlaying() {
+          clearStall();
+          wantPlay = true;
+          lastProgressAt = Date.now();
+          try { lastSeenTime = video.currentTime || 0; } catch (e) {}
+          spinner.classList.remove('show');
+          bigPlay.classList.remove('show');
+          stage.classList.remove('switching');
+          warmNext();
+        }
+        function onPlayerWaiting() {
+          spinner.classList.add('show');
+          /* The episode on screen needs every bit of bandwidth
+             right now — the next episode's warm-up stands down. */
+          suspendPreloader();
+        }
+        function onPlayerCanplay() {
+          clearStall();
+          clearReveal();
+          spinner.classList.remove('show');
+          stage.classList.remove('switching');
+          if (!hasFrame) { hasFrame = true; applyStageVisibility(); }
+        }
+
+        /* Picture-in-picture is the system's, and it stays. But while
+           the video is floating, the empty stage here collapses —
+           the button only — and comes back when PiP ends.
+           Safari reports this on the element itself, not with the
+           standard events, so both are listened for. */
+        function onEnterPip() {
+          inPip = true;
+          applyStageVisibility();
+        }
+        function onLeavePip() {
+          inPip = false;
+          applyStageVisibility();
+        }
+        function onPresModeChanged() {
+          inPip = video.webkitPresentationMode === 'picture-in-picture';
+          applyStageVisibility();
+        }
+        function onPlayerPause() { wantPlay = false; savePosition(); }
+        function onPlayerPlay() { wantPlay = true; lastProgressAt = Date.now(); }
+        /* No raw error, no dead end: one plain sentence stating
+           the fact, and one action — Try Again — on this screen. */
+        function showStreamError() {
+          spinner.classList.remove('show');
+          errorShown = true;
+          wantPlay = false;
+          stage.classList.remove('switching');
+          applyStageVisibility();
+          document.getElementById('streamErrorText').textContent =
+            navigator.onLine === false
+              ? 'You\u2019re offline. Reconnect, then try Episode ' + current + ' again.'
+              : 'Episode ' + current + ' didn\u2019t play.';
+          streamError.classList.add('show');
+        }
+
+        function onPlayerError() {
+          clearStall();
+          clearReveal();
+          if (video.src && !fallbackUsed) {
+            /* The fast direct host didn't answer. Retry once through
+               the normal archive.org/download link — same file,
+               different door — before showing the error notice. */
+            fallbackUsed = true;
+            metaArrived = false;
+            spinner.classList.add('show');
+            var resumeAt = pendingStartAt || 0;
+            try { if (video.currentTime) resumeAt = video.currentTime; } catch (e) {}
+            pendingStartAt = resumeAt;
+            video.src = epFallbackUrl(current);
+            video.load();
+            setPendingMeta(metadataHandler(resumeAt));
+            lastProgressAt = Date.now();
+            armStall(loadSeq); /* the fallback gets a watchdog too */
+            armReveal(loadSeq);
+            return;
+          }
+          if (video.src) showStreamError();
+        }
+
+        /* ----- playback-stall recovery -----
+           The load watchdog dies with the metadata; until now,
+           nothing watched the episode itself. A stream that stalls
+           mid-episode — archive.org throttling, a dropped range
+           request, a weak signal — sat on a frozen frame and a
+           spinner forever, because 'waiting' had no way out.
+           Now: while playback is wanted and the episode's clock
+           has not advanced for fifteen seconds, reload the stream
+           at the same moment through the other door (direct host
+           and archive.org/download take turns). Three recoveries
+           that still buy no progress end at the error panel —
+           never at an endless freeze. A deliberate pause, a seek,
+           a background tab, Picture-in-Picture, and the big Play
+           waiting for a tap are not stalls and are never touched. */
+        function recoverFromStall() {
+          stallRecoveries++;
+          lastRecoveryAt = Date.now();
+          lastProgressAt = Date.now();
+          suspendPreloader();
+          var resumeAt = pendingStartAt || 0;
+          try { resumeAt = video.currentTime || resumeAt; } catch (e) {}
+          pendingStartAt = resumeAt;
+          lastSeenTime = resumeAt;
+          fallbackUsed = !fallbackUsed;
+          metaArrived = false;
+          errorShown = false;
+          streamError.classList.remove('show');
+          spinner.classList.add('show');
+          video.src = fallbackUsed ? epFallbackUrl(current) : epUrl(current);
+          video.load();
+          setPendingMeta(metadataHandler(resumeAt));
+          armStall(loadSeq);
+          armReveal(loadSeq);
+        }
+
+        setInterval(function () {
+          if (!wantPlay || errorShown || inPip) return;
+          if (document.hidden) { lastProgressAt = Date.now(); return; }
+          if (bigPlay.classList.contains('show')) return;
+          if (video.ended || video.seeking || !video.src) return;
+          var t = 0;
+          try { t = video.currentTime || 0; } catch (e) { return; }
+          if (Math.abs(t - lastSeenTime) > 0.1) {
+            lastSeenTime = t;
+            lastProgressAt = Date.now();
+            /* Half a minute of honest progress forgives the
+               recoveries spent getting here. */
+            if (stallRecoveries && Date.now() - lastRecoveryAt > 30000) stallRecoveries = 0;
+            return;
+          }
+          if (Date.now() - lastProgressAt < PLAY_STALL_MS) return;
+          if (stallRecoveries >= 3) { showStreamError(); return; }
+          recoverFromStall();
+        }, 4000);
+        document.getElementById('retryBtn').addEventListener('click', function () {
+          streamError.classList.remove('show');
+          loadEpisode(current);
+        });
+
+        function recordPos() {
+          if (!video.duration || isNaN(video.duration)) return;
+          var t = video.currentTime || 0;
+          if (t > 5 && t < video.duration - 15) {
+            store.pos[current] = t;
+          } else if (t >= video.duration - 15) {
+            delete store.pos[current];
+          }
+        }
+        function savePosition() { recordPos(); save(); }
+        /* The position is written while the episode plays, at most
+           two seconds stale — so a killed app, a crash, or a dead
+           battery resumes at the same moment, not near it. The user
+           never sees this code; they feel it the one night it matters. */
+        var lastRecordedAt = -99;
+        function onPlayerTimeupdate() {
+          var t = video.currentTime || 0;
+          if (Math.abs(t - lastRecordedAt) < 2) return;
+          lastRecordedAt = t;
+          recordPos();
+          save();
+        }
+
+        function onPlayerEnded() {
+          store.done[current] = true;
+          delete store.pos[current];
+          save();
+          if (current < TOTAL) {
+            setTimeout(function () { loadEpisode(current + 1, { fromStart: true }); }, 1200);
+          }
+        }
+
+        /* The handlers above are named so they can move with the
+           job: promotePreloader unbinds them from the old element
+           and binds them to the promoted one, so PiP collapse,
+           progress saving, the fallback retry, and auto-advance
+           all follow the swap. */
+        function bindPlayer(el) {
+          el.addEventListener('playing', onPlayerPlaying);
+          el.addEventListener('play', onPlayerPlay);
+          el.addEventListener('waiting', onPlayerWaiting);
+          el.addEventListener('stalled', onPlayerWaiting);
+          el.addEventListener('canplay', onPlayerCanplay);
+          el.addEventListener('enterpictureinpicture', onEnterPip);
+          el.addEventListener('leavepictureinpicture', onLeavePip);
+          el.addEventListener('webkitpresentationmodechanged', onPresModeChanged);
+          el.addEventListener('pause', onPlayerPause);
+          el.addEventListener('error', onPlayerError, true);
+          el.addEventListener('timeupdate', onPlayerTimeupdate);
+          el.addEventListener('ended', onPlayerEnded);
+        }
+        function unbindPlayer(el) {
+          el.removeEventListener('playing', onPlayerPlaying);
+          el.removeEventListener('play', onPlayerPlay);
+          el.removeEventListener('waiting', onPlayerWaiting);
+          el.removeEventListener('stalled', onPlayerWaiting);
+          el.removeEventListener('canplay', onPlayerCanplay);
+          el.removeEventListener('enterpictureinpicture', onEnterPip);
+          el.removeEventListener('leavepictureinpicture', onLeavePip);
+          el.removeEventListener('webkitpresentationmodechanged', onPresModeChanged);
+          el.removeEventListener('pause', onPlayerPause);
+          el.removeEventListener('error', onPlayerError, true);
+          el.removeEventListener('timeupdate', onPlayerTimeupdate);
+          el.removeEventListener('ended', onPlayerEnded);
+        }
+        bindPlayer(video);
+
+        /* ----- the score: Original or Faulconer -----
+           One quiet segmented control in the Library — a choice made
+           once, so it does not live on the main screen. Switching
+           reloads the same episode from the other edition at the
+           same moment — the cuts are identical, only the music
+           differs — and the choice is remembered on this device.
+           The warm-up retires with the switch: it holds the other
+           edition's file, so the next episode warms up fresh. */
+        var scoreOriginalBtn = document.getElementById('scoreOriginal');
+        var scoreFaulconerBtn = document.getElementById('scoreFaulconer');
+
+        function renderEdition() {
+          var f = edition === 'faulconer';
+          setClass(scoreOriginalBtn, 'selected', !f);
+          scoreOriginalBtn.setAttribute('aria-pressed', String(!f));
+          setClass(scoreFaulconerBtn, 'selected', f);
+          scoreFaulconerBtn.setAttribute('aria-pressed', String(f));
+        }
+
+        function setEdition(next) {
+          if (next === edition) return;
+          var at = 0;
+          try { at = video.currentTime || 0; } catch (e) {}
+          if (!at) at = savedPos(current);
+          edition = next;
+          store.edition = next;
+          warmedFor = 0;
+          preloadedEp = 0;
+          clearPreloader(preloader);
+          renderEdition();
+          save();
+          loadEpisode(current, { at: at });
+        }
+        scoreOriginalBtn.addEventListener('click', function () { setEdition('original'); });
+        scoreFaulconerBtn.addEventListener('click', function () { setEdition('faulconer'); });
+
+        /* ----- next-episode warm-up: invisible, automatic ----- */
+        function warmNext() {
+          if (LEGACY) return; /* one stream at a time on old hardware */
+          if (current >= TOTAL || warmedFor === current) return;
+          /* Never fight the episode on screen for bandwidth: skip the
+             warm-up on data-saver or slow connections. Otherwise the
+             next episode pre-buffers in full (preload="auto"), so when
+             it starts — by auto-advance or a Library pick — its element
+             can be swapped in and play at once. */
+          try {
+            var conn = navigator.connection;
+            if (conn && (conn.saveData || /^(slow-)?2g$/.test(conn.effectiveType || ''))) return;
+          } catch (e) {}
+          warmedFor = current;
+          setTimeout(function () {
+            if (warmedFor === current) {
+              /* If the episode on screen is still struggling for
+                 data, a second full download would freeze it —
+                 skip the warm-up; a later 'playing' retries. */
+              if (video.readyState < 3) { warmedFor = 0; return; }
+              preloadedEp = current + 1;
+              preloader.src = epUrl(current + 1);
+            }
+          }, 4000);
+        }
+
+        /* ----- the Library: the whole catalog, one tap away,
+                 invisible until then. Nothing of it lives on the main screen. ----- */
+        /* Episode data as aired in the US — English titles and
+           episode-guide synopses. All 167 episodes, international numbering.
+           No air dates: they are not stored, so they can never be shown. */
+        /* Performance: only the 167 titles live in the parsed script — they are
+           all the main screen ever needs. The 167 descriptions (~130 KB)
+           sit in an inert JSON block below and are parsed lazily, once,
+           the first time a description or a Library search needs them.
+           Startup no longer pays to parse text nobody is reading. */
+        var EP_TITLES = {"1":"Prologue to Battle! The Return of Goku!","2":"The Enemy is Goku's Brother?! The Secret of the Mighty Saiyan Warriors","3":"A Life or Death Battle! Goku and Piccolo's Desperate Attack!","4":"Run in the Afterlife, Goku! The One Million Mile Snake Way","5":"Wilderness Survival! A Moonlit Night Awakens Gohan","6":"The End of Snake Way! King Kai's Bizarre Test!","7":"The Battle with Ten-Times Gravity! Goku's Race Against the Clock!","8":"Shenron Appears! The Saiyans Arrive Sooner than Expected!","9":"Yamcha's Struggle! The Terrible Saibamen!","10":"Sit Tight, Chiaotzu! Tien's Screaming Tri-Beam!","11":"Will Goku Make it in Time?! Three Hours Until the Battle Resumes!","12":"Farewell, Piccolo! Goku's Furious Counterattack!","13":"The Power of the Kaio-Ken! Goku vs. Vegeta!","14":"An All-Out Kamehame-Ha! Vegeta's Terrible Transformation!","15":"Goku on the Ropes! Pin Your Hopes on the Spirit Bomb!","16":"Defeat the Invincible Vegeta! Work a Miracle, Gohan!","17":"Dawn of the Fierce Battle! The Star of Hope is Piccolo's Homeland!","18":"The Ship Resting in Yunzabit! Time to Blast Off for Planet Namek!","19":"A Powerful New Foe! Frieza, Ruler of the Universe!","20":"The Rebellion Against Frieza! Vegeta's Burning Ambition!","21":"Protect the Dragon Balls! The Namekians' All-Out Attack!","22":"Dodoria's Terrifying Chase! A Truth Revealed to Vegeta!","23":"Vegeta's Covert Maneuvers! A Tragic Assault on the Namekians!","24":"Friends Reborn! Zarbon's Hideous Transformation!","25":"Power Up, Krillin! Frieza's Mounting Apprehension!","26":"The Scheme Is Shattered! Vegeta Strikes Back at Zarbon!","27":"A Touch-and-Go Situation! Gohan, Protect the Four-Star Ball!","28":"The Countdown to Battle Begins! Enter, The Ginyu Force!","29":"First Up for the Ginyu Force! Guldo’s Time Freeze!","30":"The Nightmare Recoome! Come Out and Play, Vegeta!","31":"Goku Arrives At Last! Take Down the Ginyu Force!","32":"The Star Player Appears! Ginyu vs. Goku!","33":"Full Power, Goku! Captain Ginyu’s Desperate Attack!","34":"Surprise! Goku is Ginyu and Ginyu is Goku!?","35":"Goku’s Comeback! Call Forth Porunga!","36":"Frieza Closes In! Mighty Porunga, Grant Our Wish!","37":"A Nightmare Transformation! Frieza's Power Level-One Million!?","38":"Frieza Bares His Fangs! Gohan's Overwhelming Attack","39":"Piccolo Reborn! Frieza's Second Transformation","40":"Frieza's Final Transformation: The Ultimate Nightmare Begins","41":"The Moment of Truth Approaches! Goku Back in Action!","42":"Defeat Frieza, Goku! The Tears of the Proud Saiyan Prince!","43":"Goku vs. Frieza! The Super Showdown Begins!","44":"A Boundary-Pushing Brawl! Goku, Frieza, and Ginyu Again?","45":"Kaio-Ken Times Twenty! An All-Or-Nothing Kamehame-Ha!","46":"The Final Trump Card! Goku's Ultimate Spirit Bomb!","47":"Awaken, Legendary Warrior! Goku the Super Saiyan!","48":"The Angry Super Saiyan! Goku Throws Down the Gauntlet!","49":"Avenge the Fallen, Goku! Countdown to the Planet's Destruction!","50":"Full Power Frieza! Shenron, Grant Our Wish!","51":"Goku's Furious Roar! A Last-Minute Wish!","52":"Duel on a Vanishing Planet! The Final Showdown!","53":"Goku's Final Attack! Countdown to Planet Namek's Destruction!","54":"Goku Vanishes Into Space! Welcome Home, Super Warriors!","55":"There Is Planet Earth, Father! Frieza and King Cold Strike Back!","56":"I Will Defeat Frieza! Another Super Saiyan!","57":"Welcome Back, Goku! Confessions of the Mysterious Youth, Trunks!","58":"Goku's New Move, Instant Transmission! The Three-Year Training Session Begins!","59":"Undetectable Monsters! The Androids Appear!","60":"The Unbeatable Enemy Within! Goku vs. Android 19!","61":"No Victory for Android 19! Enter Super Vegeta!","62":"Piccolo's Assault! Android 20 and the Twisted Future!","63":"The Hunt for Doctor Gero! Discover the Hidden Laboratory!","64":"Number 17 and Number 18! The Androids Awaken!","65":"A Sweet Face and Super Power?! Android 18 vs Vegeta!","66":"The Time for Reunification Has Come! Piccolo's Unshakeable Resolve!","67":"Another Time Machine?! Bulma Uncovers a Mystery!","68":"The Monster Goes into Motion... Strike of the Super Namekian!","69":"I Am Your Brother! The Monster With Goku's Energy!","70":"The Dizzying Deception and the Daring Escape! Defeat the Android Cell!","71":"The Hunt for Cell Is On! Goku, Back in Action!","72":"Break the Super Saiyan Barrier! Into the Hyperbolic Time Chamber!","73":"The Super Namekian Powers Up! Piccolo vs. Android 17!","74":"Run Android 17! Piccolo's All-or-Nothing Struggle!","75":"Power Unknown! Android 16 Breaks His Silence!","76":"Tien's Desperate Attack! Save Your Friends, Goku!","77":"Beyond Super Saiyan! Vegeta Confronts the Monster Cell!","78":"Cell on the Verge of Defeat! Krillin, Destroy Android 18!","79":"The Battle Turns for the Worst... Cell Attacks Android 18!","80":"The Tables Are Turned! Witness the Power of Perfection!","81":"Vegeta's Final Push! Defeat the Invincible Cell!","82":"The Strongest Super Saiyan! Trunks' Power Unleashed!","83":"Cell Invades the Airwaves! Announcing, The Cell Games","84":"Training Complete! Goku Sizes Up the Competition!","85":"The Truce is Broken! The Defense Force Strikes Back at Cell!","86":"A New Guardian! The Return of the Dragon Balls!","87":"Mr. Satan Takes the Stage! The Curtain Rises on the Cell Games","88":"Showdown! Cell vs. Goku!","89":"Battle at the Highest Level! Goku Goes All Out!","90":"The Opening Round Is Concluded! Goku's Moment of Decision!","91":"Get Angry, Gohan! Release Your Hidden Power!","92":"Tears For An Android! Gohan's Inner Rage Bursts Forth!","93":"Unleash the Warrior Within! Gohan Takes the Offensive!","94":"Perfection's End! A Fury, Beyond Super Saiyan!","95":"A Hero's Sacrifice! Last Chance to Save the World!","96":"Combine Your Strength! The Final Kamehame-Ha!","97":"A Bittersweet Victory! Until We Meet Again!","98":"Peace For the Future! The Spirit of Goku is Forever!","99":"Seven Years Later! Starting Today, Gohan Is a High School Student","100":"A New Hero, Great Saiyaman, is Born!","101":"Videl's Crisis? Gohan's Urgent Call-out!","102":"A Monster is Taken Away! The Culprit is Great Saiyaman?","103":"Entering the World Martial Arts Tournament! Goten Shows Off His Explosive Power During Training!","104":"Gohan the Teacher! Videl's Flying Technique Tutorial","105":"The Dragon Team Fully Assembled! Goku Has Come Back!","106":"Who Is the World's Greatest? The Tournament Preliminaries Begin!","107":"Everyone is Surprised! Goten and Trunks’ Super Battle!!","108":"The Junior Champ Is Finally Decided! Who Will Fight Against Mr. Satan?","109":"Restless Foreboding. A Mysterious Warrior Appears!","110":"What Happened, Piccolo? An Unexpected Outcome in the First Round","111":"An Eerie Entity, Who Exactly Is Spopovitch?","112":"Videl Battered! Gohan's Fury Reaches Its Limit!","113":"A Creeping Conspiracy! The Target Is Gohan!","114":"The Terrifying Secret of the Majin. The Mastermind Revealed!","115":"The Nefarious Wizard Babidi and Demon King Dabura's Trap","116":"Don't Sell Super Saiyans Short! Vegeta and Goku's Full-Bore Power!","117":"Whither Victory? A Battle Royal Championship Match!","118":"Stunning Youngsters! No. 18's Uphill Battle","119":"Enter the Headliner! The Looming Demon King!","120":"A Heart of Evil Awakened; Vegeta, Prince of Destruction","121":"I am the Strongest! The Clash of Goku vs. Vegeta","122":"Countdown to Revival - Crush Babidi’s Ambitions!","123":"The Seal is Released!? Gohan's Kamehame-Ha of Resistance","124":"Straightaway Into Despair? The Terror of Majin Buu","125":"Turn Into Candy! A Hungry Majin's Bizarre Power!","126":"I Will Deal With the Majin! Vegeta's Final Mortal Combat!","127":"For His Beloved Ones... The End of the Proud Warrior!","128":"A Nightmare Revisited: The Immortal Monster Majin Buu!","129":"A Secret Plan to Defeat Buu! Its Name is Fusion","130":"Found! A Ray of Hope! Awaken, Warriors!","131":"Find the Nuisances: Babidi's Retaliation Begins!","132":"A Time of Trials! Lay Hold of Legendary Powers!","133":"Hold Majin Buu in Check! Limit: Super Saiyan 3!","134":"True Worth Beginning to Show The Treacherous Buu!","135":"Silly Looking? Drilling the Fusion Pose!","136":"Bye-bye, Everyone! Goku Returns to the Next World","137":"Gohan Located! Intensive Training in the World of the Kais!","138":"Birth of a Merged Superwarrior His Name is Gotenks!","139":"Who Will Defeat Majin Buu? The Mightiest of Men Moves Out!","140":"The Powering Up Continues? Super Gotenks is Achieved!","141":"What Anger Gives Rise To Another Majin","142":"Buu Gobbles Up Buu! Onslaught of a New Majin!","143":"Headlong Rush Into Catastrophe! A One-Hour Time Limit!","144":"Training Complete! You're Finished Now, Majin Buu!","145":"Eliminating Buu with Ghosts: A Knockout Kamikaze Attack!","146":"Gotenks' Ace in the Hole! Transformation! Super Saiyan 3!","147":"On a Roll! Buu-Buu-Volleyball!","148":"Thanks for Waiting, Everyone! A Reborn Gohan Heads for Earth!","149":"Buu Overwhelmed! Ultimate Gohan's Super Power!","150":"Buu's Sinister Scheme: Gotenks is Absorbed","151":"The Elder Kai's Brainstorm! Return to Life, Goku","152":"Miracles Happen Once... Will Goku and He Make the Ultimate Combination?","153":"Invincible! The Ultimate Warrior Vegetto","154":"Buu's Ace in the Hole! The Warriors Are Absorbed!","155":"Rescue Gohan and the Others! Goku and Vegeta's Infiltration Mission!","156":"Emergency Escape from the Body! Buu's Retrogression Into Evil!","157":"Earth Destroyed! The Initial Buu's Nefarious Strike","158":"A Final Showdown at the Summit! Face-Off in the World of the Kais!","159":"Hang In There, Kakarot! You Are No. 1!","160":"A One-Minute Match-Up! Vegeta's Life-Threatening Stall for Time!","161":"An Inspired Strategy Make Two Wishes Come True!","162":"Share Your Spirit Energy with Me! I'm Making a Huge Spirit Bomb!","163":"You Are the Savior of the World! Everybody's Spirit Bomb Completed!","164":"You Really Are the Greatest, Goku!! The Demise of Majin Buu","165":"Peace Returns! A Time of Rest for the Warriors!","166":"And So, Ten Years Later... A Long-Awaited World Martial Arts Tournament!","167":"Even Stronger! Goku's Dream is Never-Ending!"};
+        var _descs = null;
+        function getDesc(n) {
+          if (!_descs) {
+            try { _descs = JSON.parse(document.getElementById('epDescs').textContent); }
+            catch (e) { _descs = {}; }
+          }
+          return _descs[n] || '';
+        }
+
+        var SAGAS = [
+          { name: 'Saiyan', from: 1, to: 18 },
+          { name: 'Frieza', from: 19, to: 54 },
+          { name: 'Androids and Cell', from: 55, to: 82 },
+          { name: 'Cell Games', from: 83, to: 98 },
+          { name: 'World Tournament', from: 99, to: 122 },
+          { name: 'Majin Buu', from: 123, to: 140 },
+          { name: 'Evil Buu', from: 141, to: 167 }
+        ];
+        var libSearch = document.getElementById('libSearch');
+        var sheetSearch = document.getElementById('sheetSearch');
+        var libEmpty = document.getElementById('libEmpty');
+        var sheetBuilt = false;
+
+        function buildSheet() {
+          if (sheetBuilt) return;
+          sheetBuilt = true;
+          SAGAS.forEach(function (saga) {
+            var group = document.createElement('div');
+            group.className = 'saga-group';
+            group.setAttribute('data-saga', saga.name.toLowerCase());
+
+            var head = document.createElement('div');
+            head.className = 'saga-head';
+            var hName = document.createElement('span');
+            hName.textContent = saga.name + ' Saga';
+            var hRange = document.createElement('span');
+            hRange.className = 'range';
+            hRange.textContent = saga.from + ' \u2013 ' + saga.to;
+            head.appendChild(hName);
+            head.appendChild(hRange);
+            group.appendChild(head);
+
+            for (var n = saga.from; n <= saga.to; n++) {
+              (function (n) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'ep-row';
+                b.setAttribute('data-ep', n);
+                var num = document.createElement('span');
+                num.className = 'num';
+                num.textContent = n;
+                var name = document.createElement('span');
+                name.className = 'name';
+                var ttl = document.createElement('span');
+                ttl.className = 'ttl';
+                ttl.textContent = EP_TITLES[n] ? EP_TITLES[n] : 'Episode ' + n;
+                name.appendChild(ttl);
+                var mark = document.createElement('span');
+                mark.className = 'mark';
+                b.appendChild(num);
+                b.appendChild(name);
+                b.appendChild(mark);
+                b.addEventListener('click', function () { openDetail(n); });
+                group.appendChild(b);
+              })(n);
+            }
+            sheetList.insertBefore(group, libEmpty);
+          });
+        }
+
+        function refreshSheet() {
+          var rows = sheetList.querySelectorAll('.ep-row');
+          for (var i = 0; i < rows.length; i++) {
+            var n = parseInt(rows[i].getAttribute('data-ep'), 10);
+            setClass(rows[i], 'current', n === current);
+            var mark = rows[i].querySelector('.mark');
+            mark.innerHTML = '';
+            if (isDone(n)) {
+              mark.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.2 16.6 4.8 12.2l-1.5 1.5 5.9 5.9L20.7 8.1l-1.5-1.4z"/></svg>';
+            } else if (savedPos(n) > 30) {
+              mark.innerHTML = '<span class="dot" aria-hidden="true"></span>';
+            }
+          }
+        }
+
+        /* ----- tap an episode: the title, big, with its description
+                 right there under it. Nothing to ask for. ----- */
+        var detailEp = null;
+        var detailTitle = document.getElementById('detailTitle');
+        var detailPlay = document.getElementById('detailPlay');
+        var detailDesc = document.getElementById('detailDesc');
+
+        function openDetail(n) {
+          detailEp = n;
+          var d = getDesc(n);
+          detailPlay.textContent =
+            (savedPos(n) > 30 ? 'Resume · Episode ' : 'Play · Episode ') + n;
+          detailTitle.textContent = EP_TITLES[n] ? EP_TITLES[n] : 'Episode ' + n;
+          detailDesc.textContent = d;
+          detailDesc.style.display = d ? '' : 'none';
+          sheet.classList.add('detail-open');
+        }
+        function closeDetail() {
+          sheet.classList.remove('detail-open');
+          detailEp = null;
+        }
+        document.getElementById('detailBack').addEventListener('click', closeDetail);
+        detailPlay.addEventListener('click', function () {
+          if (detailEp == null) return;
+          var n = detailEp;
+          closeSheet();
+          if (n !== current) loadEpisode(n);
+          else { tryPlay(); }
+        });
+
+        /* Search lives inside the Library, collapsed until the
+           magnifier asks for it, and nowhere else. */
+        document.getElementById('searchToggle').addEventListener('click', function () {
+          var open = sheetSearch.classList.toggle('open');
+          if (open) { try { libSearch.focus(); } catch (e) {} }
+        });
+        var SEARCH_TEXT = null;
+        function searchTextFor(n) {
+          if (!SEARCH_TEXT) {
+            SEARCH_TEXT = {};
+            for (var k = 1; k <= TOTAL; k++) {
+              SEARCH_TEXT[k] = ((EP_TITLES[k] || '') + ' ' + getDesc(k)).toLowerCase();
+            }
+          }
+          return SEARCH_TEXT[n];
+        }
+        function filterLibrary() {
+          var q = (libSearch.value || '').toLowerCase().replace(/^\s+|\s+$/g, '');
+          var anyVisible = false;
+          var groups = sheetList.querySelectorAll('.saga-group');
+          for (var g = 0; g < groups.length; g++) {
+            var sagaName = groups[g].getAttribute('data-saga');
+            var rows = groups[g].querySelectorAll('.ep-row');
+            var groupVisible = false;
+            for (var i = 0; i < rows.length; i++) {
+              var n = parseInt(rows[i].getAttribute('data-ep'), 10);
+              var metaText = searchTextFor(n);
+              var match = !q ||
+                String(n).indexOf(q) !== -1 ||
+                ('episode ' + n).indexOf(q) !== -1 ||
+                sagaName.indexOf(q) !== -1 ||
+                (sagaName + ' saga').indexOf(q) !== -1 ||
+                metaText.indexOf(q) !== -1;
+              rows[i].style.display = match ? '' : 'none';
+              if (match) groupVisible = true;
+            }
+            groups[g].style.display = groupVisible ? '' : 'none';
+            if (groupVisible) anyVisible = true;
+          }
+          setClass(libEmpty, 'show', !anyVisible);
+          if (q) sheetList.scrollTop = 0;
+        }
+        var filterTimer = null;
+        libSearch.addEventListener('input', function () {
+          if (filterTimer) clearTimeout(filterTimer);
+          filterTimer = setTimeout(filterLibrary, 120);
+        });
+
+        function openSheet() {
+          buildSheet();
+          refreshSheet();
+          closeDetail();
+          sheet.classList.add('open');
+          backdrop.classList.add('open');
+          sheet.setAttribute('aria-hidden', 'false');
+          var cur = sheetList.querySelector('.ep-row.current');
+          if (cur) {
+            var top = cur.getBoundingClientRect().top - sheetList.getBoundingClientRect().top
+              + sheetList.scrollTop - sheetList.clientHeight / 2 + 30;
+            sheetList.scrollTop = Math.max(0, top);
+          }
+        }
+        function closeSheet() {
+          closeDetail();
+          sheet.classList.remove('open');
+          backdrop.classList.remove('open');
+          sheet.setAttribute('aria-hidden', 'true');
+          sheetSearch.classList.remove('open');
+          if (libSearch.value) {
+            libSearch.value = '';
+            filterLibrary();
+          }
+        }
+        document.getElementById('libraryBtn').addEventListener('click', openSheet);
+        document.getElementById('sheetDone').addEventListener('click', closeSheet);
+        backdrop.addEventListener('click', closeSheet);
+        document.addEventListener('keydown', function (e) {
+          if (e.key !== 'Escape') return;
+          if (sheet.classList.contains('detail-open')) closeDetail();
+          else closeSheet();
+        });
+
+        /* ----- the TV. The session starting IS the decision —
+                 the current episode goes to the TV. ----- */
+        window['__onGCastApiAvailable'] = function (isAvailable) {
+          if (!isAvailable || !window.cast || !window.chrome) return;
+          try {
+            var ctx = cast.framework.CastContext.getInstance();
+            ctx.setOptions({
+              receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+              autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+            });
+            ctx.addEventListener(
+              cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
+              function (ev) {
+                if (ev.sessionState === cast.framework.SessionState.SESSION_STARTED ||
+                    ev.sessionState === cast.framework.SessionState.SESSION_RESUMED) {
+                  castSession = ctx.getCurrentSession();
+                  castLoad(current, video.currentTime || savedPos(current));
+                } else if (ev.sessionState === cast.framework.SessionState.SESSION_ENDED) {
+                  castSession = null;
+                  tryPlay(); /* no TV anymore — play here */
+                }
+              }
+            );
+          } catch (e) { /* Cast unavailable in this browser */ }
+        };
+
+        function castLoad(n, at) {
+          if (!castSession || !window.chrome) return;
+          try {
+            var info = new chrome.cast.media.MediaInfo(epUrl(n), 'video/mp4');
+            var req = new chrome.cast.media.LoadRequest(info);
+            req.currentTime = at || 0;
+            req.autoplay = true;
+            castSession.loadMedia(req);
+            try { video.pause(); } catch (e) {}
+          } catch (e) {}
+        }
+
+        /* Leaving — by tab, app switch, or kill — saves the moment. */
+        window.addEventListener('beforeunload', savePosition);
+        window.addEventListener('pagehide', savePosition);
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'hidden') savePosition();
+          /* Time away is not a stall: the progress clock restarts
+             on return, whatever the stream did while unwatched. */
+          else lastProgressAt = Date.now();
+        });
+
+        /* The Cast SDK is three requests to gstatic that used to block
+           startup. A TV is a sometime thing; the episode is the thing.
+           Load the SDK lazily once the page is up — __onGCastApiAvailable
+           above is already registered, so it wires itself up on arrival. */
+        function loadCastSdk() {
+          /* The modern Cast framework cannot run on older Chrome;
+             on the A9 its three requests would only delay the
+             episode. Casting there is the phone's system route,
+             not this SDK. */
+          if (LEGACY) return;
+          var sc = document.createElement('script');
+          sc.src = 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1';
+          sc.async = true;
+          document.head.appendChild(sc);
+        }
+        if (document.readyState === 'complete') {
+          setTimeout(loadCastSdk, 1800);
+        } else {
+          window.addEventListener('load', function () { setTimeout(loadCastSdk, 1800); });
+        }
+
+        /* ----- open the link: your episode, where you left off ----- */
+        renderEdition();
+        loadEpisode(current);
+      })();
+    </script>
+  </body>
+</html>
